@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Program Studi</h2>
 <table>
     <thead>
@@ -28,3 +30,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('program_studi/create'); ?>">Add New Program Studi</a>
+
+<?php $this->load->view('footer'); ?>

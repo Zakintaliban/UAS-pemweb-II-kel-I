@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Edit Pejabat</h2>
 <form action="<?php echo base_url('pejabat/update/'.$pejabat->ID); ?>" method="post">
     <label for="nama">Nama:</label>
@@ -18,3 +20,5 @@
 
     <input type="submit" value="Update Pejabat">
 </form>
+
+<?php $this->load->view('footer'); ?>

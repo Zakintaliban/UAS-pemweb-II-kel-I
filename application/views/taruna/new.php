@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Add New Taruna</h2>
 <form action="<?php echo base_url('taruna/store'); ?>" method="post">
     <label for="nama">Nama:</label>
@@ -26,3 +28,5 @@
 
     <input type="submit" value="Add Taruna">
 </form>
+
+<?php $this->load->view('footer'); ?>

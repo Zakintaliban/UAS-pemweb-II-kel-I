@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Transkrip Nilai</h2>
 <table>
     <thead>
@@ -25,3 +27,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('transkrip_nilai/create'); ?>">Add New Transkrip Nilai</a>
+
+<?php $this->load->view('footer'); ?>

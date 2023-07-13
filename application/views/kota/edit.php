@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Edit Kota</h2>
 <form action="<?php echo base_url('kota/update/'.$kota->ID); ?>" method="post">
     <label for="kode_kota">Kode Kota:</label>
@@ -10,3 +12,5 @@
 
     <input type="submit" value="Update Kota">
 </form>
+
+<?php $this->load->view('footer'); ?>

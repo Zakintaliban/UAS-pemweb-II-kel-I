@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Edit Transkrip Nilai</h2>
 <form action="<?php echo base_url('transkrip_nilai/update/'.$transkrip_nilai->ID); ?>" method="post">
     <label for="taruna">Taruna:</label>
@@ -26,3 +28,5 @@
 
     <input type="submit" value="Update Transkrip Nilai">
 </form>
+
+<?php $this->load->view('footer'); ?>

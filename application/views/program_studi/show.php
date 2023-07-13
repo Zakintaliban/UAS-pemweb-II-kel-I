@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Program Studi Details</h2>
 <p><strong>Nama:</strong> <?php echo $program_studi->Nama; ?></p>
 <p><strong>Program Pendidikan:</strong> <?php echo $program_studi->Program_Pendidikan; ?></p>
@@ -6,3 +8,5 @@
 
 <a href="<?php echo base_url('program_studi/edit/'.$program_studi->ID); ?>">Edit</a> | 
 <a href="<?php echo base_url('program_studi/delete/'.$program_studi->ID); ?>">Delete</a>
+
+<?php $this->load->view('footer'); ?>

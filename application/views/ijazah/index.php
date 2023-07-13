@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Ijazah</h2>
 <table>
     <thead>
@@ -45,3 +47,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('ijazah/create'); ?>">Add New Ijazah</a>
+
+<?php $this->load->view('footer'); ?>

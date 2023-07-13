@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Edit Taruna</h2>
 <form action="<?php echo base_url('taruna/update/'.$taruna->ID); ?>" method="post">
     <label for="nama">Nama:</label>
@@ -26,3 +28,5 @@
 
     <input type="submit" value="Update Taruna">
 </form>
+
+<?php $this->load->view('footer'); ?>

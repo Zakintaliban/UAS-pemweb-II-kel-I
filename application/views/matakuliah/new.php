@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Add New Matakuliah</h2>
 <form action="<?php echo base_url('matakuliah/store'); ?>" method="post">
     <label for="kode">Kode:</label>
@@ -33,3 +35,5 @@
 
     <input type="submit" value="Add Matakuliah">
 </form>
+
+<?php $this->load->view('footer'); ?>

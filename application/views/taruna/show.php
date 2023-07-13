@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Taruna Details</h2>
 <p><strong>Nama:</strong> <?php echo $taruna->Nama; ?></p>
 <p><strong>Nomor Taruna:</strong> <?php echo $taruna->Nomor_Taruna; ?></p>
@@ -7,3 +9,5 @@
 
 <a href="<?php echo base_url('taruna/edit/'.$taruna->ID); ?>">Edit</a> | 
 <a href="<?php echo base_url('taruna/delete/'.$taruna->ID); ?>">Delete</a>
+
+<?php $this->load->view('footer'); ?>

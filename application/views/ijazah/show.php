@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Ijazah Details</h2>
 <p><strong>Taruna:</strong> <?php echo $ijazah->Taruna; ?></p>
 <p><strong>Program Studi:</strong> <?php echo $ijazah->Program_Studi; ?></p>
@@ -15,3 +17,6 @@
 <a href="<?php echo base_url('ijazah/edit/'.$ijazah->ID); ?>">Edit</a> | 
 <a href="<?php echo base_url('ijazah/delete/'.$ijazah->ID); ?>">Delete</a> |
 <a href="<?php echo base_url('ijazah/print/'.$ijazah->ID); ?>" target="_blank">Print</a>
+
+
+<?php $this->load->view('footer'); ?>

@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Pejabat</h2>
 <table>
     <thead>
@@ -28,3 +30,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('pejabat/create'); ?>">Add New Pejabat</a>
+
+<?php $this->load->view('footer'); ?>

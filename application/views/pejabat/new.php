@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Add New Pejabat</h2>
 <form action="<?php echo base_url('pejabat/store'); ?>" method="post">
     <label for="nama">Nama:</label>
@@ -18,3 +20,5 @@
 
     <input type="submit" value="Add Pejabat">
 </form>
+
+<?php $this->load->view('footer'); ?>

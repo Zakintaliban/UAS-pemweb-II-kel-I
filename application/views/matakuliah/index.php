@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Matakuliah</h2>
 <table>
     <thead>
@@ -32,3 +34,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('matakuliah/create'); ?>">Add New Matakuliah</a>
+
+<?php $this->load->view('footer'); ?>

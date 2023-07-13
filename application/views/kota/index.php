@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Kota</h2>
 <table>
     <thead>
@@ -24,3 +26,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('kota/create'); ?>">Add New Kota</a>
+
+<?php $this->load->view('footer'); ?>

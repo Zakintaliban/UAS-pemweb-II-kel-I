@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Taruna</h2>
 <table>
     <thead>
@@ -30,3 +32,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('taruna/create'); ?>">Add New Taruna</a>
+
+<?php $this->load->view('footer'); ?>

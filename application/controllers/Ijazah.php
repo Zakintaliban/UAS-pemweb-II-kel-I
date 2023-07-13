@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class IjazahController extends CI_Controller {
+class Ijazah extends CI_Controller {
 
     public function __construct() {
         parent::__construct();

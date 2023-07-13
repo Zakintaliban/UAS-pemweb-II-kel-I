@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>List of Nilai</h2>
 <table>
     <thead>
@@ -28,3 +30,5 @@
     </tbody>
 </table>
 <a href="<?php echo base_url('nilai/create'); ?>">Add New Nilai</a>
+
+<?php $this->load->view('footer'); ?>

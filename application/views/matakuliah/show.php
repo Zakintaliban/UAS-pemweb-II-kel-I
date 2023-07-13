@@ -1,3 +1,5 @@
+<?php $this->load->view('header'); ?>
+
 <h2>Matakuliah Details</h2>
 <p><strong>Kode:</strong> <?php echo $matakuliah->Kode; ?></p>
 <p><strong>Matakuliah:</strong> <?php echo $matakuliah->Matakuliah; ?></p>
@@ -8,3 +10,5 @@
 
 <a href="<?php echo base_url('matakuliah/edit/'.$matakuliah->ID); ?>">Edit</a> | 
 <a href="<?php echo base_url('matakuliah/delete/'.$matakuliah->ID); ?>">Delete</a>
+
+<?php $this->load->view('footer'); ?>
