@@ -6,6 +6,7 @@ class PejabatController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('PejabatModel');
+        $this->load->library('form_validation');
     }
 
     public function index() {
@@ -18,9 +19,18 @@ class PejabatController extends CI_Controller {
     }
 
     public function store() {
-        $data = $this->input->post();
-        $this->PejabatModel->insert_pejabat($data);
-        redirect('pejabat');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nip', 'NIP', 'required');
+        $this->form_validation->set_rules('golongan', 'Golongan', 'required');
+        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('pejabat/new');
+        } else {
+            $data = $this->input->post();
+            $this->PejabatModel->insert_pejabat($data);
+            redirect('pejabat');
+        }
     }
 
     public function edit($id) {
@@ -29,9 +39,19 @@ class PejabatController extends CI_Controller {
     }
 
     public function update($id) {
-        $data = $this->input->post();
-        $this->PejabatModel->update_pejabat($id, $data);
-        redirect('pejabat');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nip', 'NIP', 'required');
+        $this->form_validation->set_rules('golongan', 'Golongan', 'required');
+        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $data['pejabat'] = $this->PejabatModel->get_pejabat($id);
+            $this->load->view('pejabat/edit', $data);
+        } else {
+            $data = $this->input->post();
+            $this->PejabatModel->update_pejabat($id, $data);
+            redirect('pejabat');
+        }
     }
 
     public function delete($id) {

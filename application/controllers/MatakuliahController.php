@@ -6,6 +6,7 @@ class MatakuliahController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('MatakuliahModel');
+        $this->load->library('form_validation');
     }
 
     public function index() {
@@ -18,9 +19,20 @@ class MatakuliahController extends CI_Controller {
     }
 
     public function store() {
-        $data = $this->input->post();
-        $this->MatakuliahModel->insert_matakuliah($data);
-        redirect('matakuliah');
+        $this->form_validation->set_rules('kode', 'Kode', 'required');
+        $this->form_validation->set_rules('matakuliah', 'Matakuliah', 'required');
+        $this->form_validation->set_rules('sks', 'SKS', 'required|numeric');
+        $this->form_validation->set_rules('nilai_angka', 'Nilai Angka', 'required|numeric');
+        $this->form_validation->set_rules('nilai_huruf', 'Nilai Huruf', 'required');
+        $this->form_validation->set_rules('semester', 'Semester', 'required');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('matakuliah/new');
+        } else {
+            $data = $this->input->post();
+            $this->MatakuliahModel->insert_matakuliah($data);
+            redirect('matakuliah');
+        }
     }
 
     public function edit($id) {
@@ -29,9 +41,21 @@ class MatakuliahController extends CI_Controller {
     }
 
     public function update($id) {
-        $data = $this->input->post();
-        $this->MatakuliahModel->update_matakuliah($id, $data);
-        redirect('matakuliah');
+        $this->form_validation->set_rules('kode', 'Kode', 'required');
+        $this->form_validation->set_rules('matakuliah', 'Matakuliah', 'required');
+        $this->form_validation->set_rules('sks', 'SKS', 'required|numeric');
+        $this->form_validation->set_rules('nilai_angka', 'Nilai Angka', 'required|numeric');
+        $this->form_validation->set_rules('nilai_huruf', 'Nilai Huruf', 'required');
+        $this->form_validation->set_rules('semester', 'Semester', 'required');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $data['matakuliah'] = $this->MatakuliahModel->get_matakuliah($id);
+            $this->load->view('matakuliah/edit', $data);
+        } else {
+            $data = $this->input->post();
+            $this->MatakuliahModel->update_matakuliah($id, $data);
+            redirect('matakuliah');
+        }
     }
 
     public function delete($id) {
