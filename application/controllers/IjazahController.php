@@ -12,6 +12,11 @@ class IjazahController extends CI_Controller {
         $this->load->library('form_validation');
     }
 
+    public function print($id) {
+        $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
+        $this->load->view('ijazah/print', $data);
+    }
+
     public function index() {
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
         $this->load->view('ijazah/index', $data);

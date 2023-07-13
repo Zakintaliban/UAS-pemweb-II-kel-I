@@ -12,6 +12,11 @@ class TranskripNilaiController extends CI_Controller {
         $this->load->library('form_validation');
     }
 
+    public function print($id) {
+        $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_transkrip_nilai($id);
+        $this->load->view('transkrip_nilai/print', $data);
+    }
+
     public function index() {
         $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_all_transkrip_nilai();
         $this->load->view('transkrip_nilai/index', $data);
