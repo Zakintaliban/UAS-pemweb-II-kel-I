@@ -31,7 +31,7 @@ CREATE TABLE Matakuliah(
     Kode VARCHAR(255),
     Matakuliah VARCHAR(255),
     SKS INT,
-    Nilai_Angka INT,
+    Nilai_Angka FLOAT,
     Nilai_Huruf VARCHAR(255),
     Semester ENUM('Semester I', 'Semester II', 'Semester III','Semester IV', 'Semester V', 'Semester VI'),
     PRIMARY KEY(ID)
@@ -74,7 +74,7 @@ CREATE TABLE Ijazah(
 CREATE TABLE Nilai(
     ID INT AUTO_INCREMENT,
     Taruna INT,
-    Nilai_Angka INT,
+    Nilai_Angka FLOAT,
     Nilai_Huruf VARCHAR(255),
     Matakuliah INT,
     PRIMARY KEY(ID),
