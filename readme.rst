@@ -1,70 +1,34 @@
-###################
-What is CodeIgniter
-###################
+# Aplikasi Manajemen Universitas
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Aplikasi ini adalah sistem manajemen universitas yang dibangun dengan Codeigniter 3. Sistem ini digunakan untuk mengelola berbagai aspek termasuk Program Studi, Kota, Pejabat, Matakuliah, Taruna, Ijazah, Nilai, dan Transkrip Nilai.
 
-*******************
-Release Information
-*******************
+## Persyaratan Sistem
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- [XAMPP](https://www.apachefriends.org/download.html) dengan PHP 7.2 atau lebih tinggi dan MySQL 5.6 atau lebih tinggi
+- Codeigniter 3.1.11
 
-**************************
-Changelog and New Features
-**************************
+## Instalasi
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. Pastikan XAMPP sudah terinstal di sistem anda.
+2. Clone repositori ini atau download sebagai file zip.
+3. Ekstrak file zip (jika Anda mendownloadnya sebagai file zip) dan letakkan dalam folder `xampp/htdocs/`.
+4. Jalankan XAMPP dan aktifkan Apache dan MySQL.
+5. Buka browser dan masuk ke phpMyAdmin (`http://localhost/phpmyadmin/`).
+6. Buat database baru dalam MySQL dan impor file `template.sql`.
+7. Buka file `application/config/database.php` dan ubah `hostname`, `username`, `password`, dan `database` dengan konfigurasi database Anda.
 
-*******************
-Server Requirements
-*******************
+## Fitur Aplikasi
 
-PHP version 5.6 or newer is recommended.
+- Manajemen Program Studi: Anda dapat melihat, menambah, mengedit, dan menghapus Program Studi.
+- Manajemen Kota: Anda dapat melihat, menambah, mengedit, dan menghapus Kota.
+- Manajemen Pejabat: Anda dapat melihat, menambah, mengedit, dan menghapus Pejabat.
+- Manajemen Matakuliah: Anda dapat melihat, menambah, mengedit, dan menghapus Matakuliah.
+- Manajemen Taruna: Anda dapat melihat, menambah, mengedit, dan menghapus Taruna.
+- Manajemen Ijazah: Anda dapat melihat, menambah, mengedit, dan menghapus Ijazah.
+- Manajemen Nilai: Anda dapat melihat, menambah, mengedit, dan menghapus Nilai.
+- Manajemen Transkrip Nilai: Anda dapat melihat, menambah, mengedit, dan menghapus Transkrip Nilai.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+## Dokumen Tambahan
 
-************
-Installation
-************
+Front-end Template [Google Drive](https://drive.google.com/drive/folders/1LQaqZdNDdSG1oyR96HdjrpjarMRR2VMu).
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
