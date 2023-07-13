@@ -14,9 +14,9 @@
 <p><strong>Tanggal Yudisium:</strong> <?php echo $ijazah->Tanggal_Yudisium; ?></p>
 <p><strong>Judul KKW:</strong> <?php echo $ijazah->Judul_KKW; ?></p>
 
-<a href="<?php echo base_url('ijazah/edit/'.$ijazah->ID); ?>">Edit</a> | 
-<a href="<?php echo base_url('ijazah/delete/'.$ijazah->ID); ?>">Delete</a> |
-<a href="<?php echo base_url('ijazah/print/'.$ijazah->ID); ?>" target="_blank">Print</a>
+<a href="<?php echo base_url('ijazah/edit/' . $ijazah->ID); ?>">Edit</a> | 
+<a href="<?php echo base_url('ijazah/delete/' . $ijazah->ID); ?>">Delete</a> |
+<a href="<?php echo base_url('ijazah/print/' . $ijazah->ID); ?>" target="_blank">Print</a>
 
 
 <?php $this->load->view('footer'); ?>

@@ -14,6 +14,11 @@ class Matakuliah extends CI_Controller {
         $this->load->view('matakuliah/index', $data);
     }
 
+    public function show($id) {
+        $data['matakuliah'] = $this->MatakuliahModel->get_matakuliah($id);
+        $this->load->view('matakuliah/show', $data);
+    }
+
     public function create() {
         $this->load->view('matakuliah/new');
     }

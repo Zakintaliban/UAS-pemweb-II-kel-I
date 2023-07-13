@@ -21,9 +21,9 @@
             <td><?php echo $program->Akreditasi; ?></td>
             <td><?php echo $program->SK_Akreditasi; ?></td>
             <td>
-                <a href="<?php echo base_url('program_studi/show/'.$i->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('program_studi/edit/'.$program->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('program_studi/delete/'.$program->ID); ?>">Delete</a>
+                <a href="<?php echo base_url('program_studi/show/' . $program->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('program_studi/edit/' . $program->ID); ?>">Edit</a> | 
+                <a href="<?php echo base_url('program_studi/delete/' . $program->ID); ?>">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

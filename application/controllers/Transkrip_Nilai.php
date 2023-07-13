@@ -22,6 +22,11 @@ class Transkrip_Nilai extends CI_Controller {
         $this->load->view('transkrip_nilai/index', $data);
     }
 
+    public function show($id) {
+        $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_transkrip_nilai($id);
+        $this->load->view('transkrip_nilai/show', $data);
+    }
+
     public function create() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();

@@ -21,9 +21,9 @@
             <td><?php echo $p->Golongan; ?></td>
             <td><?php echo $p->Jabatan; ?></td>
             <td>
-                <a href="<?php echo base_url('pejabat/show/'.$i->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('pejabat/edit/'.$p->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('pejabat/delete/'.$p->ID); ?>">Delete</a>
+                <a href="<?php echo base_url('pejabat/show/' . $p->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('pejabat/edit/' . $p->ID); ?>">Edit</a> | 
+                <a href="<?php echo base_url('pejabat/delete/' . $p->ID); ?>">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

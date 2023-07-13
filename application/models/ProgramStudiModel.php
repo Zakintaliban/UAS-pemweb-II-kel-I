@@ -6,6 +6,11 @@ class ProgramStudiModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_program_studi($id) {
+        $query = $this->db->where('ID', $id)->get('Program_Studi');
+        return $query->row();
+    }
+
     public function insert_program_studi($data) {
         return $this->db->insert('Program_Studi', $data);
     }

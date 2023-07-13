@@ -6,7 +6,7 @@
 <p><strong>Golongan:</strong> <?php echo $pejabat->Golongan; ?></p>
 <p><strong>Jabatan:</strong> <?php echo $pejabat->Jabatan; ?></p>
 
-<a href="<?php echo base_url('pejabat/edit/'.$pejabat->ID); ?>">Edit</a> | 
-<a href="<?php echo base_url('pejabat/delete/'.$pejabat->ID); ?>">Delete</a>
+<a href="<?php echo base_url('pejabat/edit/' . $pejabat->ID); ?>">Edit</a> | 
+<a href="<?php echo base_url('pejabat/delete/' . $pejabat->ID); ?>">Delete</a>
 
 <?php $this->load->view('footer'); ?>

@@ -23,9 +23,9 @@
             <td><?php echo $t->Tanggal_Lahir; ?></td>
             <td><?php echo $t->Program_Studi; ?></td>
             <td>
-                <a href="<?php echo base_url('taruna/show/'.$i->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('taruna/edit/'.$t->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('taruna/delete/'.$t->ID); ?>">Delete</a>
+                <a href="<?php echo base_url('taruna/show/' . $t->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('taruna/edit/' . $t->ID); ?>">Edit</a> | 
+                <a href="<?php echo base_url('taruna/delete/' . $t->ID); ?>">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

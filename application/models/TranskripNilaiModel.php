@@ -6,6 +6,11 @@ class TranskripNilaiModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_transkrip_nilai($id) {
+        $query = $this->db->where('ID', $id)->get('Transkrip_Nilai');
+        return $query->row();
+    }
+
     public function insert_transkrip_nilai($data) {
         return $this->db->insert('Transkrip_Nilai', $data);
     }

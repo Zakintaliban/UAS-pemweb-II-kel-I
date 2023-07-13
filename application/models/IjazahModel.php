@@ -6,6 +6,11 @@ class IjazahModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_ijazah($id) {
+        $query = $this->db->where('ID', $id)->get('Ijazah');
+        return $query->row();
+    }
+
     public function insert_ijazah($data) {
         return $this->db->insert('Ijazah', $data);
     }
@@ -19,3 +24,4 @@ class IjazahModel extends CI_Model {
     }
 
 }
+

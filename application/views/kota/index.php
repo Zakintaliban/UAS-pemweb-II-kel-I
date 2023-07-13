@@ -17,9 +17,9 @@
             <td><?php echo $k->Kode_Kota; ?></td>
             <td><?php echo $k->Nama; ?></td>
             <td>
-                <a href="<?php echo base_url('kota/show/'.$i->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('kota/edit/'.$k->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('kota/delete/'.$k->ID); ?>">Delete</a>
+                <a href="<?php echo base_url('kota/show/' . $k->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('kota/edit/' . $k->ID); ?>">Edit</a> | 
+                <a href="<?php echo base_url('kota/delete/' . $k->ID); ?>">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

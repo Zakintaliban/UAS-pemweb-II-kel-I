@@ -16,6 +16,11 @@ class Nilai extends CI_Controller {
         $this->load->view('nilai/index', $data);
     }
 
+    public function show($id) {
+        $data['nilai'] = $this->NilaiModel->get_nilai($id);
+        $this->load->view('nilai/show', $data);
+    }
+
     public function create() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['matakuliah'] = $this->MatakuliahModel->get_all_matakuliah();

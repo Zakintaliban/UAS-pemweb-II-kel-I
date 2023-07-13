@@ -14,6 +14,11 @@ class Taruna extends CI_Controller {
         $this->load->view('taruna/index', $data);
     }
 
+    public function show($id) {
+        $data['taruna'] = $this->TarunaModel->get_taruna($id);
+        $this->load->view('taruna/show', $data);
+    }
+
     public function create() {
         $data['program_studi'] = $this->TarunaModel->get_all_program_studi();
         $data['kota'] = $this->TarunaModel->get_all_kota();

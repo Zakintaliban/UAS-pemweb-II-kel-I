@@ -6,6 +6,11 @@ class MatakuliahModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_matakuliah($id) {
+        $query = $this->db->where('ID', $id)->get('Matakuliah');
+        return $query->row();
+    }
+
     public function insert_matakuliah($data) {
         return $this->db->insert('Matakuliah', $data);
     }
@@ -19,3 +24,4 @@ class MatakuliahModel extends CI_Model {
     }
 
 }
+

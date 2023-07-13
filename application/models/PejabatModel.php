@@ -6,6 +6,11 @@ class PejabatModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_pejabat($id) {
+        $query = $this->db->where('ID', $id)->get('Pejabat');
+        return $query->row();
+    }
+
     public function insert_pejabat($data) {
         return $this->db->insert('Pejabat', $data);
     }

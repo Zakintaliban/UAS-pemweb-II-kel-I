@@ -14,6 +14,11 @@ class Pejabat extends CI_Controller {
         $this->load->view('pejabat/index', $data);
     }
 
+    public function show($id) {
+        $data['pejabat'] = $this->PejabatModel->get_pejabat($id);
+        $this->load->view('pejabat/show', $data);
+    }
+
     public function create() {
         $this->load->view('pejabat/new');
     }

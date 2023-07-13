@@ -8,7 +8,7 @@
 <p><strong>Nilai Huruf:</strong> <?php echo $matakuliah->Nilai_Huruf; ?></p>
 <p><strong>Semester:</strong> <?php echo $matakuliah->Semester; ?></p>
 
-<a href="<?php echo base_url('matakuliah/edit/'.$matakuliah->ID); ?>">Edit</a> | 
-<a href="<?php echo base_url('matakuliah/delete/'.$matakuliah->ID); ?>">Delete</a>
+<a href="<?php echo base_url('matakuliah/edit/' . $matakuliah->ID); ?>">Edit</a> | 
+<a href="<?php echo base_url('matakuliah/delete/' . $matakuliah->ID); ?>">Delete</a>
 
 <?php $this->load->view('footer'); ?>

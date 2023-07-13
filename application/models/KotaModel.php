@@ -6,6 +6,11 @@ class KotaModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_kota($id) {
+        $query = $this->db->where('ID', $id)->get('Kota');
+        return $query->row();
+    }
+
     public function insert_kota($data) {
         return $this->db->insert('Kota', $data);
     }

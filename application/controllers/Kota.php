@@ -14,6 +14,11 @@ class Kota extends CI_Controller {
         $this->load->view('kota/index', $data);
     }
 
+    public function show($id) {
+        $data['kota'] = $this->KotaModel->get_kota($id);
+        $this->load->view('kota/show', $data);
+    }
+
     public function create() {
         $this->load->view('kota/new');
     }

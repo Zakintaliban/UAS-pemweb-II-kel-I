@@ -6,6 +6,11 @@ class TarunaModel extends CI_Model {
         return $query->result();
     }
 
+    public function get_taruna($id) {
+        $query = $this->db->where('ID', $id)->get('Taruna');
+        return $query->row();
+    }
+
     public function insert_taruna($data) {
         return $this->db->insert('Taruna', $data);
     }

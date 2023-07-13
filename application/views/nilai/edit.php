@@ -1,7 +1,7 @@
 <?php $this->load->view('header'); ?>
 
 <h2>Edit Nilai</h2>
-<form action="<?php echo base_url('nilai/update/'.$nilai->ID); ?>" method="post">
+<form action="<?php echo base_url('nilai/update/' . $nilai->ID); ?>" method="post">
     <label for="taruna">Taruna:</label>
     <select id="taruna" name="taruna">
         <?php foreach ($taruna as $t): ?>

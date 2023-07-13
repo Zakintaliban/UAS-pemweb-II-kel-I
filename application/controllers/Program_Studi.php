@@ -14,6 +14,11 @@ class Program_Studi extends CI_Controller {
         $this->load->view('program_studi/index', $data);
     }
 
+    public function show($id) {
+        $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($id);
+        $this->load->view('program_studi/show', $data);
+    }
+
     public function create() {
         $this->load->view('program_studi/new');
     }

@@ -25,9 +25,9 @@
             <td><?php echo $m->Nilai_Huruf; ?></td>
             <td><?php echo $m->Semester; ?></td>
             <td>
-                <a href="<?php echo base_url('matakuliah/show/'.$i->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('matakuliah/edit/'.$m->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('matakuliah/delete/'.$m->ID); ?>">Delete</a>
+                <a href="<?php echo base_url('matakuliah/show/' . $m->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('matakuliah/edit/' . $m->ID); ?>">Edit</a> | 
+                <a href="<?php echo base_url('matakuliah/delete/' . $m->ID); ?>">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

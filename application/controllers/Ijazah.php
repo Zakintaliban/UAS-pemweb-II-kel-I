@@ -22,6 +22,11 @@ class Ijazah extends CI_Controller {
         $this->load->view('ijazah/index', $data);
     }
 
+    public function show($id) {
+        $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
+        $this->load->view('ijazah/show', $data);
+    }
+
     public function create() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();

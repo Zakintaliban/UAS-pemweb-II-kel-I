@@ -1,7 +1,7 @@
 <?php $this->load->view('header'); ?>
 
 <h2>Edit Matakuliah</h2>
-<form action="<?php echo base_url('matakuliah/update/'.$matakuliah->ID); ?>" method="post">
+<form action="<?php echo base_url('matakuliah/update/' . $matakuliah->ID); ?>" method="post">
     <label for="kode">Kode:</label>
     <input type="text" id="kode" name="kode" value="<?php echo $matakuliah->Kode; ?>">
     <?php echo form_error('kode'); ?>

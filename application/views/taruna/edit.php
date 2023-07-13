@@ -1,7 +1,7 @@
 <?php $this->load->view('header'); ?>
 
 <h2>Edit Taruna</h2>
-<form action="<?php echo base_url('taruna/update/'.$taruna->ID); ?>" method="post">
+<form action="<?php echo base_url('taruna/update/' . $taruna->ID); ?>" method="post">
     <label for="nama">Nama:</label>
     <input type="text" id="nama" name="nama" value="<?php echo $taruna->Nama; ?>">
     <?php echo form_error('nama'); ?>

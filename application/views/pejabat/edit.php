@@ -1,7 +1,7 @@
 <?php $this->load->view('header'); ?>
 
 <h2>Edit Pejabat</h2>
-<form action="<?php echo base_url('pejabat/update/'.$pejabat->ID); ?>" method="post">
+<form action="<?php echo base_url('pejabat/update/' . $pejabat->ID); ?>" method="post">
     <label for="nama">Nama:</label>
     <input type="text" id="nama" name="nama" value="<?php echo $pejabat->Nama; ?>">
     <?php echo form_error('nama'); ?>

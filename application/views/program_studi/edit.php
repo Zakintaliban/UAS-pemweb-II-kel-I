@@ -1,7 +1,7 @@
 <?php $this->load->view('header'); ?>
 
 <h2>Edit Program Studi</h2>
-<form action="<?php echo base_url('program_studi/update/'.$program_studi->ID); ?>" method="post">
+<form action="<?php echo base_url('program_studi/update/' . $program_studi->ID); ?>" method="post">
     <label for="nama">Nama:</label>
     <input type="text" id="nama" name="nama" value="<?php echo $program_studi->Nama; ?>">
     <?php echo form_error('nama'); ?>

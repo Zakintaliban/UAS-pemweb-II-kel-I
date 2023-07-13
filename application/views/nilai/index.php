@@ -21,9 +21,9 @@
             <td><?php echo $n->Nilai_Huruf; ?></td>
             <td><?php echo $n->Matakuliah; ?></td>
             <td>
-                <a href="<?php echo base_url('nilai/show/'.$n->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('nilai/edit/'.$n->ID); ?>">Edit</a> |
-                <a href="<?php echo base_url('nilai/delete/'.$n->ID); ?>">Delete</a>
+                <a href="<?php echo base_url('nilai/show/' . $n->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('nilai/edit/' . $n->ID); ?>">Edit</a> |
+                <a href="<?php echo base_url('nilai/delete/' . $n->ID); ?>">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

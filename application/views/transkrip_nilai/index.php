@@ -19,8 +19,8 @@
             <td><?php echo $tn->Ijazah; ?></td>
             <td><?php echo $tn->Program_Studi; ?></td>
             <td>
-                <a href="<?php echo base_url('transkrip_nilai/show/'.$tn->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('ijazah/print/'.$i->ID); ?>">Print</a>
+                <a href="<?php echo base_url('transkrip_nilai/show/' . $tn->ID); ?>">Show</a> |
+                <a href="<?php echo base_url('ijazah/print/' . $tn->ID); ?>">Print</a>
             </td>
         </tr>
         <?php endforeach; ?>

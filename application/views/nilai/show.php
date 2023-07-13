@@ -6,7 +6,7 @@
 <p><strong>Nilai Huruf:</strong> <?php echo $nilai->Nilai_Huruf; ?></p>
 <p><strong>Matakuliah:</strong> <?php echo $nilai->Matakuliah; ?></p>
 
-<a href="<?php echo base_url('nilai/edit/'.$nilai->ID); ?>">Edit</a> |
-<a href="<?php echo base_url('nilai/delete/'.$nilai->ID); ?>">Delete</a>
+<a href="<?php echo base_url('nilai/edit/' . $nilai->ID); ?>">Edit</a> |
+<a href="<?php echo base_url('nilai/delete/' . $nilai->ID); ?>">Delete</a>
 
 <?php $this->load->view('footer'); ?>
