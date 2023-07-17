@@ -4,7 +4,7 @@ Aplikasi ini adalah sistem manajemen universitas yang dibangun dengan Codeignite
 
 ## Persyaratan Sistem
 
-- [XAMPP](https://www.apachefriends.org/download.html) dengan PHP 7.2 atau lebih tinggi dan MySQL 5.6 atau lebih tinggi
+- [XAMPP](https://www.apachefriends.org/download.html) dengan PHP 8.0.28
 - Codeigniter 3.1.11
 
 ## Instalasi
