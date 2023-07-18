@@ -1,12 +1,47 @@
 <?php $this->load->view('header'); ?>
 
-<h2>Nilai Details</h2>
-<p><strong>Taruna:</strong> <?php echo $nilai->Taruna; ?></p>
-<p><strong>Nilai Angka:</strong> <?php echo $nilai->Nilai_Angka; ?></p>
-<p><strong>Nilai Huruf:</strong> <?php echo $nilai->Nilai_Huruf; ?></p>
-<p><strong>Matakuliah:</strong> <?php echo $nilai->Matakuliah; ?></p>
-
-<a href="<?php echo base_url('nilai/edit/' . $nilai->ID); ?>">Edit</a> |
-<a href="<?php echo base_url('nilai/delete/' . $nilai->ID); ?>">Delete</a>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Nilai Details</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <address>
+                                        <p class="font-weight-bold">Taruna:</p>
+                                        <p class="font-weight-bold">Nilai Angka:</p>
+                                        <p class="font-weight-bold">Nilai Huruf:</p>
+                                        <p class="font-weight-bold">Mata Kuliah:</p>
+                                    </address>
+                                </div>
+                                <div class="col-md-6">
+                                    <address class="text-primary">
+                                        <p class="font-weight-bold">
+                                            <?php echo $nilai->Taruna; ?>
+                                        </p>
+                                        <p class="font-weight-bold">
+                                            <?php echo $nilai->Nilai_Angka; ?>
+                                        </p>
+                                        <p class="font-weight-bold">
+                                            <?php echo $nilai->Nilai_Huruf; ?>
+                                        </p>
+                                        <p class="font-weight-bold">
+                                            <?php echo $nilai->Matakuliah; ?>
+                                        </p>
+                                    </address>
+                                </div>
+                            </div>
+                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('nilai/edit/' . $nilai->ID); ?>">Edit</a> |
+                            <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('nilai/delete/' . $nilai->ID); ?>">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php $this->load->view('footer'); ?>

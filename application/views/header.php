@@ -21,7 +21,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url('skydash/images/favicon.png'); ?>" />
   <!-- global styling -->
-  <style>
+  <!-- <style>
     table {
       width: 100%;
       border-collapse: collapse;
@@ -43,7 +43,7 @@
     th {
       background-color: #f2f2f2;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
