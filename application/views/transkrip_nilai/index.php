@@ -1,4 +1,7 @@
 <?php $this->load->view('header'); ?>
+<?php $this->load->view('sidebar'); ?>
+<?php $this->load->view('main'); ?>
+
 
 <h2>List of Transkrip Nilai</h2>
 <table>
@@ -12,17 +15,17 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($transkrip_nilai as $tn): ?>
-        <tr>
-            <td><?php echo $tn->ID; ?></td>
-            <td><?php echo $tn->Taruna; ?></td>
-            <td><?php echo $tn->Ijazah; ?></td>
-            <td><?php echo $tn->Program_Studi; ?></td>
-            <td>
-                <a href="<?php echo base_url('transkrip_nilai/show/' . $tn->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('transkrip_nilai/print/' . $tn->ID); ?>">Print</a>
-            </td>
-        </tr>
+        <?php foreach ($transkrip_nilai as $tn) : ?>
+            <tr>
+                <td><?php echo $tn->ID; ?></td>
+                <td><?php echo $tn->Taruna; ?></td>
+                <td><?php echo $tn->Ijazah; ?></td>
+                <td><?php echo $tn->Program_Studi; ?></td>
+                <td>
+                    <a href="<?php echo base_url('transkrip_nilai/show/' . $tn->ID); ?>">Show</a> |
+                    <a href="<?php echo base_url('transkrip_nilai/print/' . $tn->ID); ?>">Print</a>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
