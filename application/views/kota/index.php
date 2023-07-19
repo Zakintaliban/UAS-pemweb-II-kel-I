@@ -1,4 +1,7 @@
 <?php $this->load->view('header'); ?>
+<?php $this->load->view('sidebar'); ?>
+<?php $this->load->view('main'); ?>
+
 
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper">
