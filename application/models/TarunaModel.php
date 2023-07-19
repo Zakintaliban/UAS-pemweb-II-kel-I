@@ -23,4 +23,13 @@ class TarunaModel extends CI_Model {
         return $this->db->where('ID', $id)->delete('Taruna');
     }
 
+	public function get_all_program_studi() {
+        $query = $this->db->get('Program_Studi');
+        return $query->result();
+    }
+
+	public function get_all_kota() {
+        $query = $this->db->get('Kota');
+        return $query->result();
+    }
 }
