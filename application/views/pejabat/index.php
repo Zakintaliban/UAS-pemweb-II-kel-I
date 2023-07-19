@@ -1,4 +1,7 @@
 <?php $this->load->view('header'); ?>
+<?php $this->load->view('sidebar'); ?>
+<?php $this->load->view('main'); ?>
+
 
 <h2>List of Pejabat</h2>
 <table>
@@ -13,19 +16,19 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($pejabat as $p): ?>
-        <tr>
-            <td><?php echo $p->ID; ?></td>
-            <td><?php echo $p->Nama; ?></td>
-            <td><?php echo $p->NIP; ?></td>
-            <td><?php echo $p->Golongan; ?></td>
-            <td><?php echo $p->Jabatan; ?></td>
-            <td>
-                <a href="<?php echo base_url('pejabat/show/' . $p->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('pejabat/edit/' . $p->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('pejabat/delete/' . $p->ID); ?>">Delete</a>
-            </td>
-        </tr>
+        <?php foreach ($pejabat as $p) : ?>
+            <tr>
+                <td><?php echo $p->ID; ?></td>
+                <td><?php echo $p->Nama; ?></td>
+                <td><?php echo $p->NIP; ?></td>
+                <td><?php echo $p->Golongan; ?></td>
+                <td><?php echo $p->Jabatan; ?></td>
+                <td>
+                    <a href="<?php echo base_url('pejabat/show/' . $p->ID); ?>">Show</a> |
+                    <a href="<?php echo base_url('pejabat/edit/' . $p->ID); ?>">Edit</a> |
+                    <a href="<?php echo base_url('pejabat/delete/' . $p->ID); ?>">Delete</a>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
