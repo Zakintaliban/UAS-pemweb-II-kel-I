@@ -1,4 +1,6 @@
 <?php $this->load->view('header'); ?>
+<?php $this->load->view('sidebar'); ?>
+<?php $this->load->view('main'); ?>
 
 <h2>List of Taruna</h2>
 <table>
@@ -14,20 +16,20 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($taruna as $t): ?>
-        <tr>
-            <td><?php echo $t->ID; ?></td>
-            <td><?php echo $t->Nama; ?></td>
-            <td><?php echo $t->Nomor_Taruna; ?></td>
-            <td><?php echo $t->Tempat_Lahir; ?></td>
-            <td><?php echo $t->Tanggal_Lahir; ?></td>
-            <td><?php echo $t->Program_Studi; ?></td>
-            <td>
-                <a href="<?php echo base_url('taruna/show/' . $t->ID); ?>">Show</a> |
-                <a href="<?php echo base_url('taruna/edit/' . $t->ID); ?>">Edit</a> | 
-                <a href="<?php echo base_url('taruna/delete/' . $t->ID); ?>">Delete</a>
-            </td>
-        </tr>
+        <?php foreach ($taruna as $t) : ?>
+            <tr>
+                <td><?php echo $t->ID; ?></td>
+                <td><?php echo $t->Nama; ?></td>
+                <td><?php echo $t->Nomor_Taruna; ?></td>
+                <td><?php echo $t->Tempat_Lahir; ?></td>
+                <td><?php echo $t->Tanggal_Lahir; ?></td>
+                <td><?php echo $t->Program_Studi; ?></td>
+                <td>
+                    <a href="<?php echo base_url('taruna/show/' . $t->ID); ?>">Show</a> |
+                    <a href="<?php echo base_url('taruna/edit/' . $t->ID); ?>">Edit</a> |
+                    <a href="<?php echo base_url('taruna/delete/' . $t->ID); ?>">Delete</a>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
