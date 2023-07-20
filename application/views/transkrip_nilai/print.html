@@ -230,7 +230,7 @@
 							<tr>
 								<td>Laporan Ijazah Nomor</td>
 								<td>:</td>
-								<td>&nbsp; <?php echo $ijazah->Nomor_Ijazah; ?></td>
+								<td>1234</td>
 							</tr>
 						</tbody>
 					</table>
@@ -246,7 +246,7 @@
 					<br /><br />
 					<table
 						class="data"
-						width="70%"
+						width="100%"
 						align="left"
 						style="margin-bottom: 1rem"
 					>
@@ -254,32 +254,32 @@
 							<tr>
 								<td>NAMA</td>
 								<td>:</td>
-								<td>&nbsp;<?php echo $taruna->Nama;?></td>
+								<td>Nohara Sinosuke</td>
 							</tr>
 							<tr>
 								<td>NOMOR TARUNA</td>
 								<td>:</td>
-								<td>&nbsp;<?php echo $taruna->Nomor_Taruna;?></td>
+								<td>123</td>
 							</tr>
 							<tr>
 								<td>TEMPAT / TANGGAL LAHIR</td>
 								<td>:</td>
-								<td>&nbsp;<?php echo $kota->Nama;?>, <?php echo $taruna->Tanggal_Lahir;?></td>
+								<td>Bogor, 25 November 1985</td>
 							</tr>
 							<tr>
 								<td>JURUSAN / PROGRAM STUDI</td>
 								<td>:</td>
-								<td>&nbsp;<?php echo $program_studi->Program_Pendidikan;?>, <?php echo $program_studi->Nama;?></td>
+								<td>DIPLOMA III MANAJEMEN TRANSPORTASI PERAIRAN DARATAN</td>
 							</tr>
 							<tr>
 								<td>STATUS</td>
 								<td>:</td>
-								<td>&nbsp;TERAKREDITASI "<?php echo $program_studi->Akreditasi;?>"</td>
+								<td>TERAKREDITASI "BAIK SEKALI"</td>
 							</tr>
 							<tr>
 								<td>TANGGAL YUDISIUM</td>
 								<td>:</td>
-								<td>&nbsp;<?php echo $ijazah->Tanggal_Yudisium;?></td>
+								<td>22 AGUSTUS 2023</td>
 							</tr>
 						</tbody>
 					</table>
@@ -300,19 +300,10 @@
 							</tr>
 						</thead>
 						<tbody>
-						<?php foreach ($nilai as $nilai_data) : ?>
-
-							//Pengen get 1 data matkul dengan $nilai_data->Mata_Kuliah
-
-							<?php
-							$matakuliah_data = $matakuliah
-							?>
-
-
 							<tr>
 								<td align="center"></td>
 								<td align="center"></td>
-								<td align="center"><b><?php echo $nilai_data->Nilai_Huruf ?></b></td>
+								<td align="center"><b>SEMESTER 1 (20SKS)</b></td>
 								<td align="center"></td>
 								<td align="center"></td>
 							</tr>
@@ -323,7 +314,13 @@
 								<td align="center">2</td>
 								<td align="center">B</td>
 							</tr>
-							<?php endforeach; ?>
+							<tr>
+								<td align="center">1</td>
+								<td align="center">PK103</td>
+								<td>PBB DAN TATA UPACARA</td>
+								<td align="center">2</td>
+								<td align="center">B</td>
+							</tr>
 							<tr>
 								<td align="center">4</td>
 								<td
