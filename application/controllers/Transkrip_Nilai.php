@@ -9,13 +9,26 @@ class Transkrip_Nilai extends CI_Controller {
         $this->load->model('TarunaModel');
         $this->load->model('IjazahModel');
         $this->load->model('ProgramStudiModel');
+		$this->load->model('KotaModel');
+		$this->load->model('NilaiModel');
+		$this->load->model('MataKuliahModel');
         $this->load->library('form_validation');
     }
 
     public function print($id) {
         $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_transkrip_nilai($id);
+		$data['taruna'] = $this->TarunaModel->get_taruna($data['transkrip_nilai']->Taruna);
+		$data['ijazah'] = $this->IjazahModel->get_ijazah($data['transkrip_nilai']->Ijazah);
+		$data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['transkrip_nilai']->Program_Studi);
+		$data['kota'] = $this->KotaModel->get_kota($data['taruna']->Tempat_Lahir);
+		$data['nilai'] = $this->NilaiModel->get_nilai_by_taruna($data['taruna']->ID);
         $this->load->view('transkrip_nilai/print', $data);
     }
+
+	public function getMataKuliah($id) {
+		$data['matakuliah'] = $this->MataKuliahModel->get_matakuliah($id);
+		$this->load->view('transkrip_nilai/print', $data);
+	}
 
     public function index() {
         $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_all_transkrip_nilai();
