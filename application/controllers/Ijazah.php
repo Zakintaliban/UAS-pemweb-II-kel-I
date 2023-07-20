@@ -13,9 +13,10 @@ class Ijazah extends CI_Controller {
     }
 
     public function print($id) {
-        $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
-        $this->load->view('ijazah/print', $data);
-    }
+	    $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
+	    $data['taruna'] = $this->TarunaModel->get_taruna($data['ijazah']['taruna']);
+	    $this->load->view('ijazah/print', $data);
+	}
 
     public function index() {
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
