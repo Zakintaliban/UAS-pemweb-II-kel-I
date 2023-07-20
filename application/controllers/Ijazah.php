@@ -7,16 +7,21 @@ class Ijazah extends CI_Controller {
         parent::__construct();
         $this->load->model('IjazahModel');
         $this->load->model('TarunaModel');
+        $this->load->model('KotaModel');
         $this->load->model('ProgramStudiModel');
         $this->load->model('PejabatModel');
         $this->load->library('form_validation');
     }
 
     public function print($id) {
-	    $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
-	    $data['taruna'] = $this->TarunaModel->get_taruna($data['ijazah']['taruna']);
-	    $this->load->view('ijazah/print', $data);
-	}
+        $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
+        $data['taruna'] = $this->TarunaModel->get_taruna($data['ijazah']->Taruna);
+        $data['kota'] = $this->KotaModel->get_kota($data['taruna']->Tempat_Lahir);
+        $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['taruna']->Program_Studi);
+        $data['direktur'] = $this->PejabatModel->get_pejabat($data['ijazah']->Direktur);
+        $data['wakil_direktur'] = $this->PejabatModel->get_pejabat($data['ijazah']->Wakil_Direktur);
+        $this->load->view('ijazah/print', $data);
+    }
 
     public function index() {
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();

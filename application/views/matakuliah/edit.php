@@ -1,58 +1,52 @@
 <?php $this->load->view('header'); ?>
+<?php $this->load->view('sidebar'); ?>
+<?php $this->load->view('main'); ?>
 
-<div class="container-scroller">
-    <div class="container-fluid page-body-wrapper">
-        <div class="main-panel">
-            <div class="content-wrapper">
-                <div class="col-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Edit Mata Kuliah</h4>
-                            <form class="form-sample" action="<?php echo base_url('matakuliah/update/' . $matakuliah->ID); ?>" method="post">
-                                <div class="form-group">
-                                    <label for="kode">Kode</label>
-                                    <input type="text" id="kode" name="kode" class="form-control" value="<?php echo $matakuliah->Kode; ?>">
-                                    <?php echo form_error('kode'); ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="matakuliah">Matakuliah</label>
-                                    <input type="text" id="matakuliah" name="matakuliah" class="form-control" value="<?php echo $matakuliah->Matakuliah; ?>">
-                                    <?php echo form_error('matakuliah'); ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sks">SKS</label>
-                                    <input type="number" id="sks" name="sks" class="form-control" value="<?php echo $matakuliah->SKS; ?>">
-                                    <?php echo form_error('sks'); ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nilai_angka">Nilai Angka</label>
-                                    <input type="number" max="4" id="nilai_angka" name="nilai_angka" class="form-control" value="<?php echo $matakuliah->Nilai_Angka; ?>">
-                                    <?php echo form_error('nilai_angka'); ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nilai_huruf">Nilai Huruf</label>
-                                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $matakuliah->Nilai_Huruf; ?>">
-                                    <?php echo form_error('nilai_huruf'); ?>
-                                </div>
-                                <div class="form-group">
-                                    <label for="semester">Semester</label>
-                                    <select id="semester" name="semester" class="form-control">
-                                        <option value="Semester I" <?php if ($matakuliah->Semester == 'Semester I') echo 'selected'; ?>>Semester I</option>
-                                        <option value="Semester II" <?php if ($matakuliah->Semester == 'Semester II') echo 'selected'; ?>>Semester II</option>
-                                        <option value="Semester III" <?php if ($matakuliah->Semester == 'Semester III') echo 'selected'; ?>>Semester III</option>
-                                        <option value="Semester IV" <?php if ($matakuliah->Semester == 'Semester IV') echo 'selected'; ?>>Semester IV</option>
-                                        <option value="Semester V" <?php if ($matakuliah->Semester == 'Semester V') echo 'selected'; ?>>Semester V</option>
-                                        <option value="Semester VI" <?php if ($matakuliah->Semester == 'Semester VI') echo 'selected'; ?>>Semester VI</option>
-                                    </select>
-                                    <?php echo form_error('semester'); ?>
-                                </div>
-                                <input type="submit" class="btn btn-primary mr-2" value="Update Mata Kuliah">
-                                <a href="<?php echo base_url('matakuliah'); ?>" class="btn btn-light">Cancel</a>
-                            </form>
-                        </div>
-                    </div>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Mata Kuliah</h4>
+            <form class="form-sample" action="<?php echo base_url('matakuliah/update/' . $matakuliah->ID); ?>" method="post">
+                <div class="form-group">
+                    <label for="kode">Kode</label>
+                    <input type="text" id="kode" name="kode" class="form-control" value="<?php echo $matakuliah->Kode; ?>">
+                    <?php echo form_error('kode'); ?>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="matakuliah">Matakuliah</label>
+                    <input type="text" id="matakuliah" name="matakuliah" class="form-control" value="<?php echo $matakuliah->Matakuliah; ?>">
+                    <?php echo form_error('matakuliah'); ?>
+                </div>
+                <div class="form-group">
+                    <label for="sks">SKS</label>
+                    <input type="number" id="sks" name="sks" class="form-control" value="<?php echo $matakuliah->SKS; ?>">
+                    <?php echo form_error('sks'); ?>
+                </div>
+                <div class="form-group">
+                    <label for="nilai_angka">Nilai Angka</label>
+                    <input type="number" max="4" id="nilai_angka" name="nilai_angka" class="form-control" value="<?php echo $matakuliah->Nilai_Angka; ?>">
+                    <?php echo form_error('nilai_angka'); ?>
+                </div>
+                <div class="form-group">
+                    <label for="nilai_huruf">Nilai Huruf</label>
+                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $matakuliah->Nilai_Huruf; ?>">
+                    <?php echo form_error('nilai_huruf'); ?>
+                </div>
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <select id="semester" name="semester" class="form-control">
+                        <option value="Semester I" <?php if ($matakuliah->Semester == 'Semester I') echo 'selected'; ?>>Semester I</option>
+                        <option value="Semester II" <?php if ($matakuliah->Semester == 'Semester II') echo 'selected'; ?>>Semester II</option>
+                        <option value="Semester III" <?php if ($matakuliah->Semester == 'Semester III') echo 'selected'; ?>>Semester III</option>
+                        <option value="Semester IV" <?php if ($matakuliah->Semester == 'Semester IV') echo 'selected'; ?>>Semester IV</option>
+                        <option value="Semester V" <?php if ($matakuliah->Semester == 'Semester V') echo 'selected'; ?>>Semester V</option>
+                        <option value="Semester VI" <?php if ($matakuliah->Semester == 'Semester VI') echo 'selected'; ?>>Semester VI</option>
+                    </select>
+                    <?php echo form_error('semester'); ?>
+                </div>
+                <input type="submit" class="btn btn-primary mr-2" value="Update Mata Kuliah">
+                <a href="<?php echo base_url('matakuliah'); ?>" class="btn btn-light">Cancel</a>
+            </form>
         </div>
     </div>
 </div>
