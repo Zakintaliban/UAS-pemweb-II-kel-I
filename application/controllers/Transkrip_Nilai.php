@@ -19,11 +19,17 @@ class Transkrip_Nilai extends CI_Controller {
 
     public function index() {
         $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_all_transkrip_nilai();
+		$data['taruna'] = $this->TarunaModel->get_all_taruna();
+        $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
+        $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
         $this->load->view('transkrip_nilai/index', $data);
     }
 
     public function show($id) {
         $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_transkrip_nilai($id);
+		$data['taruna'] = $this->TarunaModel->get_taruna($data['transkrip_nilai']->Taruna);
+		$data['ijazah'] = $this->IjazahModel->get_ijazah($data['transkrip_nilai']->Ijazah);
+		$data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['transkrip_nilai']->Program_Studi);
         $this->load->view('transkrip_nilai/show', $data);
     }
 
@@ -38,7 +44,7 @@ class Transkrip_Nilai extends CI_Controller {
         $this->form_validation->set_rules('taruna', 'Taruna', 'required');
         $this->form_validation->set_rules('ijazah', 'Ijazah', 'required');
         $this->form_validation->set_rules('program_studi', 'Program Studi', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['taruna'] = $this->TarunaModel->get_all_taruna();
             $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
@@ -63,7 +69,7 @@ class Transkrip_Nilai extends CI_Controller {
         $this->form_validation->set_rules('taruna', 'Taruna', 'required');
         $this->form_validation->set_rules('ijazah', 'Ijazah', 'required');
         $this->form_validation->set_rules('program_studi', 'Program Studi', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['transkrip_nilai'] = $this->TranskripNilaiModel->get_transkrip_nilai($id);
             $data['taruna'] = $this->TarunaModel->get_all_taruna();

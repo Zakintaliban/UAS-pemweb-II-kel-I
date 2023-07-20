@@ -6,16 +6,22 @@ class Taruna extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('TarunaModel');
+		$this->load->model('KotaModel');
+		$this->load->model('ProgramStudiModel');
         $this->load->library('form_validation');
     }
 
     public function index() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
+		$data['kota'] = $this->TarunaModel->get_all_kota();
+		$data['program_studi'] = $this->TarunaModel->get_all_program_studi();
         $this->load->view('taruna/index', $data);
     }
 
     public function show($id) {
         $data['taruna'] = $this->TarunaModel->get_taruna($id);
+		$data['kota'] = $this->KotaModel->get_kota($data['taruna']->Tempat_Lahir);
+		$data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['taruna']->Program_Studi);
         $this->load->view('taruna/show', $data);
     }
 
@@ -31,7 +37,7 @@ class Taruna extends CI_Controller {
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
         $this->form_validation->set_rules('program_studi', 'Program Studi', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['program_studi'] = $this->TarunaModel->get_all_program_studi();
             $data['kota'] = $this->TarunaModel->get_all_kota();
@@ -56,7 +62,7 @@ class Taruna extends CI_Controller {
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
         $this->form_validation->set_rules('program_studi', 'Program Studi', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['taruna'] = $this->TarunaModel->get_taruna($id);
             $data['program_studi'] = $this->TarunaModel->get_all_program_studi();
