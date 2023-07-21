@@ -60,7 +60,14 @@ class Program_Studi extends CI_Controller {
     }
 
     public function delete($id) {
-        $this->ProgramStudiModel->delete_program_studi($id);
-        redirect('program_studi');
+        $response = array();
+        if($this->ProgramStudiModel->delete_ijazah($id)) {
+            $response['success'] = true;
+            $response['message'] = 'Data successfully deleted.';
+        } else {
+            $response['success'] = false;
+            $response['message'] = 'An error occurred while deleting the data.';
+        }
+        echo json_encode($response);
     }
 }

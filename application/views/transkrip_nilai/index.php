@@ -44,7 +44,7 @@
 										<td>
 											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('transkrip_nilai/show/' . $tn->ID); ?>">Show</a>
 											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('transkrip_nilai/update/' . $tn->ID); ?>">Edit</a>
-											<a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('transkrip_nilai/delete/' . $tn->ID); ?>">Delete</a>
+											<a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $tn->ID; ?>)">Delete</a>
 											<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/print/' . $tn->ID); ?>">Print</a>
 										</td>
 									</tr>
@@ -57,3 +57,53 @@
 		</div>
 
 		<?php $this->load->view('footer'); ?>
+
+		
+		<!-- SweetAlert CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+
+		<!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<!-- SweetAlert JS -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<script>
+			function deleteData(id) {
+				Swal.fire({
+					title: 'Konfirmasi',
+					text: 'Apakah Anda yakin ingin menghapus data ini?',
+					icon: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Ya, hapus!',
+					cancelButtonText: 'Batal'
+				}).then((result) => {
+					if (result.isConfirmed) {
+						$.ajax({
+							url: "<?php echo base_url('transkrip_nilai/delete/'); ?>" + id,
+							type: "POST",
+							data: {},
+							success: function(response) {
+								Swal.fire({
+									title: 'Sukses',
+									text: 'Data berhasil dihapus!',
+									icon: 'success'
+								});
+								setTimeout(function() {
+									location.reload();
+								}, 1500);
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+								Swal.fire({
+									title: 'Error',
+									text: 'Terjadi kesalahan saat menghapus data.',
+									icon: 'error'
+								});
+							}
+						});
+					}
+				});
+			}
+		</script>

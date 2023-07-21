@@ -103,7 +103,14 @@ class Ijazah extends CI_Controller {
     }
 
     public function delete($id) {
-        $this->IjazahModel->delete_ijazah($id);
-        redirect('ijazah');
+        $response = array();
+        if($this->IjazahModel->delete_ijazah($id)) {
+            $response['success'] = true;
+            $response['message'] = 'Data successfully deleted.';
+        } else {
+            $response['success'] = false;
+            $response['message'] = 'An error occurred while deleting the data.';
+        }
+        echo json_encode($response);
     }
 }

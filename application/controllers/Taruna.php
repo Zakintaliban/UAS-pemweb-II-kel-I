@@ -123,7 +123,14 @@ class Taruna extends CI_Controller {
     }
 
     public function delete($id) {
-        $this->TarunaModel->delete_taruna($id);
-        redirect('taruna');
+        $response = array();
+        if($this->TarunaModel->delete_taruna($id)) {
+            $response['success'] = true;
+            $response['message'] = 'Data successfully deleted.';
+        } else {
+            $response['success'] = false;
+            $response['message'] = 'An error occurred while deleting the data.';
+        }
+        echo json_encode($response);
     }
 }
