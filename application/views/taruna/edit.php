@@ -50,7 +50,7 @@
 							<?php if (isset($error)) {
 								echo $error;
 							} ?>
-							<img id="imgPreview" src="<?php echo $imageData ?>" alt="your image" <?php echo $imageData ? '' : 'style="display: none;"' ?> />
+							<img id="imgPreview" src="<?php echo (isset($imageData) && !empty($imageData)) ? $imageData : ''; ?>" alt="your image" <?php echo (isset($imageData) && !empty($imageData)) ? '' : 'style="display: none;"'; ?> />
 						</div>
 						<input type="submit" class="btn btn-primary mr-2" value="Update Taruna">
 						<a href="<?php echo base_url('taruna'); ?>" class="btn btn-light">Cancel</a>
