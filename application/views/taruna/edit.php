@@ -45,7 +45,7 @@
 							<label for="foto">Foto</label>
 							<div class="custom-file">
 								<input style="cursor: pointer" type="file" class="custom-file-input" id="foto" name="foto" accept="image/png, image/jpeg, image/gif">
-								<label style="cursor: pointer" class="custom-file-label" for="foto">Choose file</label>
+								<label style="cursor: pointer" class="custom-file-label" for="foto">Choose file (max: 2mb)</label>
 							</div>
 							<?php if (isset($error)) {
 								echo $error;

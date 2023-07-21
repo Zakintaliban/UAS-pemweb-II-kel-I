@@ -41,9 +41,9 @@ class Taruna extends CI_Controller {
     
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|jpeg|png|bmp|tiff|ico|svg|webp|heif|raw|indd|ai|eps';
-        // $config['max_size']             = 2048; 
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 1536;
+        $config['max_size']             = 2048; 
+        $config['max_width']            = 1024;
+        $config['max_height']           = 1536;
     
         $this->upload->initialize($config);
     
@@ -96,9 +96,9 @@ class Taruna extends CI_Controller {
 
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|jpeg|png|bmp|tiff|ico|svg|webp|heif|raw|indd|ai|eps';
-        // $config['max_size']             = 2048; 
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 1536;
+        $config['max_size']             = 2048; 
+        $config['max_width']            = 1024;
+        $config['max_height']           = 1536;
 
         $this->upload->initialize($config);
 
