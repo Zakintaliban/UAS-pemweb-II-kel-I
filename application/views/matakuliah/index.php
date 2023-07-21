@@ -32,8 +32,8 @@
                                 <td><?php echo $m->Nilai_Huruf; ?></td>
                                 <td><?php echo $m->Semester; ?></td>
                                 <td>
-                                    <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('matakuliah/show/' . $m->ID); ?>">Show</a> |
-                                    <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('matakuliah/edit/' . $m->ID); ?>">Edit</a> |
+                                    <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('matakuliah/show/' . $m->ID); ?>">Show</a>
+                                    <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('matakuliah/edit/' . $m->ID); ?>">Edit</a>
                                     <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('matakuliah/delete/' . $m->ID); ?>">Delete</a>
                                 </td>
                             </tr>
