@@ -7,7 +7,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">List of Transkrip Nilai</h4>
-					<a class="btn btn-primary mr-2" href="<?php echo base_url('transkrip_nilai/create'); ?>">Add New Transkrip Nilai</a>
+					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/create'); ?>">Add New Transkrip Nilai</a>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<thead>
