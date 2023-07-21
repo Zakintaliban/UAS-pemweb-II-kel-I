@@ -1,5 +1,6 @@
 <?php $this->load->view('header'); ?>
 <?php $this->load->view('sidebar'); ?>
+
 <div class="main-panel">
 	<div class="content-wrapper">
 		<div class="grid-margin stretch-card">

@@ -299,7 +299,7 @@
 						<tr>
 							<td>TEMPAT / TANGGAL LAHIR</td>
 							<td>:</td>
-							<td>&nbsp;<?php echo $kota->Nama; ?>, <?php echo $taruna->Tanggal_Lahir; ?></td>
+							<td>&nbsp;<?php echo $kota->Nama; ?>, <?php echo convert_date(date($taruna->Tanggal_Lahir)); ?> </td>
 						</tr>
 						<tr>
 							<td>JURUSAN / PROGRAM STUDI</td>
@@ -309,12 +309,12 @@
 						<tr>
 							<td>STATUS</td>
 							<td>:</td>
-							<td>&nbsp;TERAKREDITASI "<?php echo $program_studi->Akreditasi; ?>"</td>
+							<td>&nbsp;TERAKREDITASI "<?php echo strtoupper($program_studi->Akreditasi); ?>"</td>
 						</tr>
 						<tr>
 							<td>TANGGAL YUDISIUM</td>
 							<td>:</td>
-							<td>&nbsp;<?php echo $ijazah->Tanggal_Yudisium; ?></td>
+							<td>&nbsp;<?php echo convert_date(date($ijazah->Tanggal_Yudisium)); ?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -323,7 +323,7 @@
 					<thead>
 						<tr>
 							<th width="30">NO</th>
-							<th width="100">KODE</th>
+							<th width="70">KODE</th>
 							<th>MATA KULIAH</th>
 							<th width="40">SKS</th>
 							<th width="60">NILAI</th>
@@ -354,7 +354,7 @@
 								<tr>
 									<td align="center"><?php echo $counter ?></td>
 									<td align="center"><?php echo $value->Kode ?></td>
-									<td><?php echo $value->Matakuliah ?></td>
+									<td style=" white-space: nowrap; padding: 2px;"><?php echo $value->Matakuliah ?></td>
 									<td align="center"><?php echo $value->SKS ?></td>
 									<td align="center"><?php echo $value->Nilai_Huruf ?></td>
 								</tr>
@@ -367,6 +367,7 @@
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
+										white-space: nowrap; padding: 2px;
 									" align="left" colspan="3">
 								<b>UJIAN AKHIR PROGRAM STUDI:</b><br>
 								INI BELUM
@@ -378,6 +379,7 @@
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
+										white-space: nowrap; padding: 2px;
 									" align="left" colspan="4">
 								<b>JUDUL KERTAS KERJA WAJIB</b><br>
 								<?php echo $ijazah->Judul_KKW; ?>
@@ -388,12 +390,23 @@
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
+										white-space: nowrap; padding: 2px;
 									" align="left" colspan="4">
-								<br><br>
+								<br>
 								JUMLAH SKS : <?php echo $sks; ?> <br><br>
-								IPK : <?php echo $ipk / $total_matkul; ?> <br><br>
-								PREDIKAT : INI BELUM <br><br>
-
+								IP KUMULATIF : <?php $ipk_final = $ipk / $total_matkul;
+												echo $ipk_final; ?> <br><br>
+								PREDIKAT : <?php
+											if ($ipk_final >= 3.5) {
+												echo "DENGAN PUJIAN";
+											} else if ($ipk_final >= 3.0 && $ipk_final <= 3.49) {
+												echo "SANGAT MEMUASKAN";
+											} else if ($ipk_final >= 2.5 && $ipk_final <= 2.99) {
+												echo "MEMUASKAN";
+											} else {
+												echo "CUKUP";
+											}
+											?><br><br>
 							</td>
 						</tr>
 					</tbody>
@@ -425,7 +438,7 @@
 												<br />
 											</td>
 											<td align="center" style="padding-left: 5px" width="">
-												<br /><br />WAKIL DIREKTUR I<br />UNIVERSITAS SIBER ASIA<br />
+												<br /><br />WAKIL DIREKTUR I<br />Politeknik Merdeka<br />
 												<div style="width: 3cm; height: 1.5cm"></div>
 												<br /><?php echo $direktur->Nama; ?><br /><?php echo $direktur->NIP; ?>
 												<br />
@@ -435,6 +448,9 @@
 										<tr></tr>
 									</tbody>
 								</table>
+
+								<img style="height: 6cm; width: 4cm; position:relative; margin-top: 1cm; border: 3px solid #000000;" src="https://www.its.ac.id/dptsi/wp-content/uploads/sites/8/2021/10/ARNOLD-4X6-MERAH-scaled.jpg">
+
 								<table align="right" border="0">
 									<tbody>
 										<tr>
@@ -454,7 +470,7 @@
 												<br />
 											</td>
 											<td align="center" style="padding-left: 5px" width="">
-												Jakarta, <?php echo (date("j F Y")); ?><br /><br />DIREKTUR<br />UNIVERSITAS SIBER ASIA<br />
+												Jakarta, <?php echo convert_date(date("Y-m-d")); ?><br /><br />DIREKTUR<br />Politeknik Merdeka<br />
 												<div style="width: 3cm; height: 1.5cm"></div>
 												<br /><?php echo $wakil_direktur->Nama; ?><br /><?php echo $wakil_direktur->NIP; ?>
 												<br />
@@ -472,10 +488,10 @@
 		</div>
 	</div>
 </body>
-<script>
+<!-- <script>
 	window.onload = function() {
 		window.print();
 	};
-</script>
+</script> -->
 
 </html>
