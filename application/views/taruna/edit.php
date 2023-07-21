@@ -6,7 +6,7 @@
 	<div class="card">
 		<div class="card-body">
 			<h4 class="card-title">Edit Taruna</h4>
-			<form class="form-sample" action="<?php echo base_url('taruna/update/' . $taruna->ID); ?>" method="post">
+			<form class="form-sample" action="<?php echo base_url('taruna/update/' . $taruna->ID); ?>" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="nama">Nama</label>
 					<input type="text" id="nama" name="nama" class="form-control" value="<?php echo $taruna->Nama; ?>">
@@ -40,11 +40,37 @@
 					</select>
 					<?php echo form_error('program_studi'); ?>
 				</div>
+				<div class="form-group">
+            <label for="foto">Foto</label>
+            <div class="custom-file">
+                <input style="cursor: pointer" type="file" class="custom-file-input" id="foto" name="foto" accept="image/png, image/jpeg, image/gif">
+                <label style="cursor: pointer" class="custom-file-label" for="foto">Choose file</label>
+            </div>
+            <?php if (isset($error)) { echo $error; } ?>
+            <img id="imgPreview" src="<?php echo $imageData ?>" alt="your image" <?php echo $imageData ? '' : 'style="display: none;"' ?>/>
+        </div>
 				<input type="submit" class="btn btn-primary mr-2" value="Update Taruna">
 				<a href="<?php echo base_url('taruna'); ?>" class="btn btn-light">Cancel</a>
 			</form>
 		</div>
 	</div>
 </div>
-
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					var imgPreview = document.getElementById('imgPreview');
+					imgPreview.src = e.target.result;
+					imgPreview.style.display = "block";
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+		document.getElementById('foto').addEventListener('change', function() {
+			readURL(this);
+		});
+	});
+</script>
 <?php $this->load->view('footer'); ?>
