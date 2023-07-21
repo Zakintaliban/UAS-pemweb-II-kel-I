@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="<?php echo base_url('skydash/css/vertical-layout-light/style.css'); ?>">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url('skydash/images/favicon.png'); ?>" />
-  <link rel="stylesheet" href="<?php echo base_url('./style/style.css'); ?>">
   <!-- global styling -->
   <!-- <style>
     table {
@@ -49,9 +48,9 @@
 <div class="container-scroller">
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-      <a class="navbar-brand brand-logo mr-5" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('skydash/images/logo.svg') ?>" class="mr-2" alt="logo"></a>
-      <a class="navbar-brand brand-logo-mini" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('skydash/images/logo.svg') ?>" alt="logo"></a>
+    <div class="text-center pl-4 navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo mr-5 judul" href="<?php echo base_url("./index.php"); ?>"><img src="<?php echo base_url('skydash/images/politeknik-merdeka.png') ?>" class="mr-2" alt="logo">Politeknik Merdeka</a>
+      <a class="navbar-brand brand-logo-mini" href="<?php echo base_url("./index.php"); ?>"><img src="<?php echo base_url('skydash/images/politeknik-merdeka.png') ?>" alt="logo"></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
