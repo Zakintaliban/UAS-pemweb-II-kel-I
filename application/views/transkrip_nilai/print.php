@@ -6,8 +6,10 @@
 	<style type="text/css">
 		@media print {
 			@page {
-				size: legal landscape;
+				size: legal potrait;
 				margin: 1cm;
+				margin-top: 0;
+        		margin-bottom: 0;
 			}
 
 			h1 {
@@ -284,7 +286,7 @@
 							font-weight: bold;
 						">TRANSKRIP NILAI AKADEMIK</b><br />
 				<br /><br />
-				<table class="data" width="70%" align="left" style="margin-bottom: 1rem">
+				<table class="data" width="70%" align="left" style="margin-bottom: 1rem;">
 					<tbody>
 						<tr>
 							<td>NAMA</td>
@@ -319,7 +321,7 @@
 					</tbody>
 				</table>
 
-				<table class="tb_data border" border="2" width="100%" style="column-span: all">
+				<table class="tb_data border" border="2" width="100%" style="column-span: all;border-top: 6px double black;border-bottom: 6px double black;">
 					<thead>
 						<tr>
 							<th width="30">NO</th>
@@ -336,10 +338,15 @@
 						$ipk = 0;
 						$total_matkul = 0;
 						$counter = 1;
+						$ujian_akhir = [];
 						?>
 
 						<?php foreach ($nilai_transkrip as $nilai_data => $value_all) : ?>
 
+							<?php if ($nilai_data === 'UJIAN AKHIR PROGRAM STUDI') {
+								$ujian_akhir = $value_all;
+								continue;
+							}  ?>
 
 							<tr>
 								<td align="center"></td>
@@ -362,27 +369,32 @@
 								$total_matkul++;
 							endforeach; ?>
 						<?php endforeach; ?>
-						<tr>
-							<td align="center"><?php echo $counter ?></td>
-							<td style="
+
+						<?php foreach ($ujian_akhir as $item) : ?>
+							<tr>
+								<td align="center"><?php echo $counter ?></td>
+								<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
 										white-space: nowrap; padding: 2px;
 									" align="left" colspan="3">
-								<b>UJIAN AKHIR PROGRAM STUDI:</b><br>
-								INI BELUM
-							</td>
-							<td align="center">A</td>
-						</tr>
+									<b>UJIAN AKHIR PROGRAM STUDI:</b><br><br> <?php echo $item->Matakuliah ?><br><br>
+								</td>
+								<td align="center" style="
+										border-top: solid 2px black;
+										white-space: nowrap; padding: 2px;"><?php echo $item->Nilai_Huruf ?></td>
+							</tr>
+						<?php endforeach; ?>
 						<tr>
 							<td align="center"><?php echo $counter + 1 ?></td>
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
-										white-space: nowrap; padding: 2px;
-									" align="left" colspan="4">
-								<b>JUDUL KERTAS KERJA WAJIB</b><br>
-								<?php echo $ijazah->Judul_KKW; ?>
+										white-space: nowrap; padding: 2px;" colspan="4">
+								<b>JUDUL KERTAS KERJA WAJIB</b><br><br>
+								<center><i>
+										<?php echo $ijazah->Judul_KKW; ?><br><br>
+									</i></center>
 							</td>
 						</tr>
 						<tr>
@@ -449,7 +461,7 @@
 									</tbody>
 								</table>
 
-								<img style="height: 6cm; width: 4cm; position:relative; margin-top: 1cm; border: 3px solid #000000;" src="https://www.its.ac.id/dptsi/wp-content/uploads/sites/8/2021/10/ARNOLD-4X6-MERAH-scaled.jpg">
+								<img style="height: 6cm; width: 4cm; position:relative; margin-top: 1cm; border: 3px solid #000000;" src="<?php echo $foto ?>">
 
 								<table align="right" border="0">
 									<tbody>
@@ -488,10 +500,10 @@
 		</div>
 	</div>
 </body>
-<!-- <script>
+<script>
 	window.onload = function() {
 		window.print();
 	};
-</script> -->
+</script>
 
 </html>
