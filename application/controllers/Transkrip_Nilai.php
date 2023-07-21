@@ -38,6 +38,17 @@ class Transkrip_Nilai extends CI_Controller {
 		}
 
 		$this->load->helper('date_converter');
+        // Add the foto variable
+        if($data['taruna']->Foto) {
+            // Convert binary data to base64 encoded data
+            $base64Image = base64_encode($data['taruna']->Foto);
+
+            // Create the image data URL
+            $data['foto'] = 'data:image/jpeg;base64,' . $base64Image;
+        } else {
+            $data['foto'] = '';
+        }
+
         $this->load->view('transkrip_nilai/print', $data);
     }
 
