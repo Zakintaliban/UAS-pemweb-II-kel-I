@@ -61,7 +61,7 @@ class Program_Studi extends CI_Controller {
 
     public function delete($id) {
         $response = array();
-        if($this->ProgramStudiModel->delete_ijazah($id)) {
+        if($this->ProgramStudiModel->delete_program_studi($id)) {
             $response['success'] = true;
             $response['message'] = 'Data successfully deleted.';
         } else {

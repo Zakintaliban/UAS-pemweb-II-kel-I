@@ -125,7 +125,7 @@ class Transkrip_Nilai extends CI_Controller {
 
     public function delete($id) {
         $response = array();
-        if($this->TranskripNilaiModel->delete_ijazah($id)) {
+        if($this->TranskripNilaiModel->delete_transkrip_nilai($id)) {
             $response['success'] = true;
             $response['message'] = 'Data successfully deleted.';
         } else {

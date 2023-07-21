@@ -61,7 +61,7 @@ class Pejabat extends CI_Controller {
 
     public function delete($id) {
         $response = array();
-        if($this->PejabatModel->delete_ijazah($id)) {
+        if($this->PejabatModel->delete_pejabat($id)) {
             $response['success'] = true;
             $response['message'] = 'Data successfully deleted.';
         } else {

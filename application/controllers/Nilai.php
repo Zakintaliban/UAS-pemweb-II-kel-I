@@ -71,7 +71,7 @@ class Nilai extends CI_Controller {
 
     public function delete($id) {
         $response = array();
-        if($this->NilaiModel->delete_ijazah($id)) {
+        if($this->NilaiModel->delete_nilai($id)) {
             $response['success'] = true;
             $response['message'] = 'Data successfully deleted.';
         } else {

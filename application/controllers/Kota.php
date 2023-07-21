@@ -57,7 +57,7 @@ class Kota extends CI_Controller {
 
     public function delete($id) {
         $response = array();
-        if($this->KotaModel->delete_ijazah($id)) {
+        if($this->KotaModel->delete_kota($id)) {
             $response['success'] = true;
             $response['message'] = 'Data successfully deleted.';
         } else {
