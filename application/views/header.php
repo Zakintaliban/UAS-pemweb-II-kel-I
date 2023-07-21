@@ -19,7 +19,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="<?php echo base_url('skydash/css/vertical-layout-light/style.css'); ?>">
   <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo base_url('skydash/images/favicon.png'); ?>" />
+  <link rel="shortcut icon" href="<?php echo base_url('skydash/images/logo.ico'); ?>" />
   <!-- global styling -->
   <!-- <style>
     table {

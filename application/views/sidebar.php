@@ -6,7 +6,7 @@
     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('matakuliah'); ?>"><i class="mdi mdi-book menu-icon"></i><span class="menu-title">Matakuliah</span></a></li>
     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('taruna'); ?>"><i class="mdi mdi-account menu-icon"></i><span class="menu-title">Taruna</a></span></li>
     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('ijazah'); ?>"><i class="mdi mdi-note menu-icon"></i><span class="menu-title">Ijazah</span></a></li>
-    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('nilai'); ?>"><i class="mdi mdi-pen menu-icon"></i><span class="menu-title">Nilai</span></a></li>
+    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('nilaiku'); ?>"><i class="mdi mdi-pen menu-icon"></i><span class="menu-title">Nilai</span></a></li>
     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('transkrip_nilai'); ?>"><i class="mdi mdi-newspaper menu-icon"></i><span class="menu-title">Transkrip Nilai</span></a></li>
   </ul>
 </nav>
