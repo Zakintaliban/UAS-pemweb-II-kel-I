@@ -18,13 +18,22 @@
                 </div>
                 <div class="form-group">
                     <label for="nilai_angka">Nilai Angka</label>
-                    <input type="text" id="nilai_angka" name="nilai_angka" class="form-control" value="<?php echo $nilai->Nilai_Angka; ?>">
+                    <select id="nilai_angka" name="nilai_angka" class="form-control">
+                        <option value="">Pilih Nilai</option>
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3</option>
+                        <option value="3.5">3.5</option>
+                        <option value="4">4</option>
+                    </select>
                     <?php echo form_error('nilai_angka'); ?>
 
                 </div>
                 <div class="form-group">
                     <label for="nilai_huruf">Nilai Huruf</label>
-                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $nilai->Nilai_Huruf; ?>">
+                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $nilai->Nilai_Huruf; ?>" disabled>
                     <?php echo form_error('nilai_huruf'); ?>
                 </div>
                 <div class="form-group">

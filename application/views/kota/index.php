@@ -26,8 +26,8 @@
                                         <td><?php echo $k->Kode_Kota; ?></td>
                                         <td><?php echo $k->Nama; ?></td>
                                         <td>
-                                            <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('kota/show/' . $k->ID); ?>">Show</a> |
-                                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('kota/edit/' . $k->ID); ?>">Edit</a> |
+                                            <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('kota/show/' . $k->ID); ?>">Show</a>|
+                                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('kota/edit/' . $k->ID); ?>">Edit</a>
                                             <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('kota/delete/' . $k->ID); ?>">Delete</a>
                                         </td>
                                     </tr>

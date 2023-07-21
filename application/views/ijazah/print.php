@@ -81,7 +81,7 @@
   </div>
 
   <div style="margin: 4rem; text-align: justify;">
-    <p>Ijazah ini diberikan Surat Keputusan Direktur Politeknik XYZ Nomor : <?= $ijazah->Nomor_SK; ?> Tahun <?= date('Y') ?> setelah yang
+    <p>Ijazah ini diberikan Surat Keputusan Direktur Politeknik Merdeka Nomor : <?= $ijazah->Nomor_SK; ?> Tahun <?= date('Y') ?> setelah yang
       bersangkutan memenuhi semua persyaratan yang telah ditentukan dan kepadanya dilimpahkan segala wewenang dan hak yang
       berhubungan dengan Ijazah yang dimilikinya serta berhak menggunakan Gelar Akademik <strong>Ahli Madya Komputer (<?= $ijazah->Gelar_Akademik; ?>).</strong></p>
   </div>
@@ -94,7 +94,7 @@
     <div>
       <center>
         <p>WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></p>
-        <p style="margin-bottom: 10rem;">Politeknik XYZ</p>
+        <p style="margin-bottom: 10rem;">Politeknik Merdeka</p>
         <p><?= $wakil_direktur->Nama ?></p>
         <p><?= $wakil_direktur->NIP ?></p>
       </center>
@@ -103,7 +103,7 @@
       <center>
         <p>Jakarta, <?= date('m') . ' ' . date('M') . ' ' . date('Y')?></p>
         <p>DIREKTUR</p>
-        <p style="margin-bottom: 8rem;">Politeknik XYZ</p>
+        <p style="margin-bottom: 8rem;">Politeknik Merdeka</p>
         <p><?= $direktur->Nama ?></p>
         <p><?= $direktur->NIP ?></p>
       </center>
