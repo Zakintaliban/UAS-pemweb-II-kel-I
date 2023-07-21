@@ -33,7 +33,7 @@ CREATE TABLE Matakuliah(
     SKS INT,
     Nilai_Angka FLOAT,
     Nilai_Huruf VARCHAR(255),
-    Semester ENUM('Semester I', 'Semester II', 'Semester III','Semester IV', 'Semester V', 'Semester VI'),
+    Semester ENUM('Semester I', 'Semester II', 'Semester III','Semester IV', 'Semester V', 'Semester VI', 'UJIAN AKHIR PROGRAM STUDI'),
     PRIMARY KEY(ID)
 );
 
