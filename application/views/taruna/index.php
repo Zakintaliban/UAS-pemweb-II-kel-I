@@ -7,7 +7,7 @@
 	<div class="card">
 		<div class="card-body">
 			<h4 class="card-title">List of Taruna</h4>
-			<a class="btn btn-primary mr-2" href="<?php echo base_url('taruna/create'); ?>">Add New Taruna</a>
+			<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('taruna/create'); ?>">Add New Taruna</a>
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
