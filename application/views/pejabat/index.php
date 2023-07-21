@@ -7,7 +7,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">List of Pejabat</h4>
-					<a class="btn btn-primary mr-2" href="<?php echo base_url('pejabat/create'); ?>">Add New Pejabat</a>
+					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('pejabat/create'); ?>">Add New Pejabat</a>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<thead>
