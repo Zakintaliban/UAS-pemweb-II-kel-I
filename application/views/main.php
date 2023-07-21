@@ -1,12 +1,5 @@
 <div class="main-panel">
     <div class="content-wrapper">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-        </nav>
         <div class="col-12 col-xl-8 mb-4 mb-xl-4">
             <h3 class="font-weight-bold">Halo, Selamat Datang! 🏫
             </h3>
