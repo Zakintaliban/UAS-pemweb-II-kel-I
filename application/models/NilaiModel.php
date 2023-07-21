@@ -11,6 +11,11 @@ class NilaiModel extends CI_Model {
         return $query->row();
     }
 
+	public function get_nilai_by_taruna($id) {
+        $query = $this->db->where('Taruna', $id)->get('Nilai');
+        return $query->result();
+    }
+
     public function insert_nilai($data) {
         return $this->db->insert('Nilai', $data);
     }
