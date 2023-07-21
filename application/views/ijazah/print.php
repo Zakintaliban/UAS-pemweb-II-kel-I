@@ -69,7 +69,7 @@
     </div>
     <div>
       <p>: <strong><?= $taruna->Nama; ?></strong></p>
-      <p>: <?= $kota->Nama . ', ' . $taruna->Tanggal_Lahir; ?></p>
+      <p>: <?= $kota->Nama . ', ' . convert_date($taruna->Tanggal_Lahir); ?></p>
       <p>: <?= $ijazah->Taruna; ?></p>
       <p>: <?= $program_studi->Program_Pendidikan; ?></p>
       <p>: <?= $program_studi->Nama; ?></p>
@@ -101,7 +101,7 @@
     </div>
     <div>
       <center>
-        <p>Jakarta, <?= date('m') . ' ' . date('M') . ' ' . date('Y')?></p>
+        <p>Jakarta, <?= convert_date(date('Y-m-d'))?></p>
         <p>DIREKTUR</p>
         <p style="margin-bottom: 8rem;">Politeknik Merdeka</p>
         <p><?= $direktur->Nama ?></p>

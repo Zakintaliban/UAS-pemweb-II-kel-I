@@ -37,6 +37,7 @@ class Transkrip_Nilai extends CI_Controller {
 			$data['matakuliah'] = "Not Found";
 		}
 
+		$this->load->helper('date_converter');
         $this->load->view('transkrip_nilai/print', $data);
     }
 

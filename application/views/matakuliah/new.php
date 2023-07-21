@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label for="nilai_huruf">Nilai Huruf</label>
-                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" disabled>
+                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" readonly>
                     <?php echo form_error('nilai_huruf'); ?>
                 </div>
                 <div class="form-group">
@@ -50,6 +50,7 @@
                         <option value="Semester IV">Semester IV</option>
                         <option value="Semester V">Semester V</option>
                         <option value="Semester VI">Semester VI</option>
+						<option value="UJIAN AKHIR PROGRAM STUDI">UJIAN AKHIR PROGRAM STUDI</option>
                     </select>
                     <?php echo form_error('semester'); ?>
                 </div>

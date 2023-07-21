@@ -20,6 +20,7 @@ class Ijazah extends CI_Controller {
         $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['taruna']->Program_Studi);
         $data['direktur'] = $this->PejabatModel->get_pejabat($data['ijazah']->Direktur);
         $data['wakil_direktur'] = $this->PejabatModel->get_pejabat($data['ijazah']->Wakil_Direktur);
+		$this->load->helper('date_converter');
         $this->load->view('ijazah/print', $data);
     }
 
@@ -53,7 +54,7 @@ class Ijazah extends CI_Controller {
         $this->form_validation->set_rules('nomor_seri', 'Nomor Seri', 'required');
         $this->form_validation->set_rules('tanggal_yudisium', 'Tanggal Yudisium', 'required');
         $this->form_validation->set_rules('judul_kkw', 'Judul KKW', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['taruna'] = $this->TarunaModel->get_all_taruna();
             $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
@@ -87,7 +88,7 @@ class Ijazah extends CI_Controller {
         $this->form_validation->set_rules('nomor_seri', 'Nomor Seri', 'required');
         $this->form_validation->set_rules('tanggal_yudisium', 'Tanggal Yudisium', 'required');
         $this->form_validation->set_rules('judul_kkw', 'Judul KKW', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['ijazah'] = $this->IjazahModel->get_ijazah($id);
             $data['taruna'] = $this->TarunaModel->get_all_taruna();

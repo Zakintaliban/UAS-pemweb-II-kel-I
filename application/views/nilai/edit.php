@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="nilai_huruf">Nilai Huruf</label>
-                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $nilai->Nilai_Huruf; ?>" disabled>
+                    <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $nilai->Nilai_Huruf; ?>" readonly>
                     <?php echo form_error('nilai_huruf'); ?>
                 </div>
                 <div class="form-group">
