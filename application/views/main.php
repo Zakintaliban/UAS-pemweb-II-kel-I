@@ -1,6 +1,17 @@
 <div class="main-panel">
     <div class="content-wrapper">
-        <h1>lists of each table</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+        <div class="col-12 col-xl-8 mb-4 mb-xl-4">
+            <h3 class="font-weight-bold">Halo, Selamat Datang! 🏫
+            </h3>
+            <h6 class="font-weight-normal mb-0 text-primary">Nikmati kemudahan pengelolaan di LMS, platform digital Anda untuk pendidikan!</h6>
+        </div>
         <div class="grid-margin transparent">
             <div class="row">
                 <div class="col-md-6 mb-4 stretch-card transparent">
