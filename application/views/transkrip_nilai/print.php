@@ -384,9 +384,9 @@
 										border-top: solid 2px black;
 										white-space: nowrap; padding: 2px;"><?php echo $item->Nilai_Huruf ?></td>
 							</tr>
-						<?php endforeach; ?>
+						<?php $counter++; endforeach; ?>
 						<tr>
-							<td align="center"><?php echo $counter + 1 ?></td>
+							<td align="center"><?php echo $counter ?></td>
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
@@ -398,7 +398,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td align="center"><?php echo $counter + 2 ?></td>
+							<td align="center"><?php echo $counter + 1 ?></td>
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
@@ -406,7 +406,12 @@
 									" align="left" colspan="4">
 								<br>
 								JUMLAH SKS : <?php echo $sks; ?> <br><br>
-								IP KUMULATIF : <?php $ipk_final = $ipk / $total_matkul;
+								IP KUMULATIF : <?php
+												if ($ipk==0 ||$total_matkul == 0 ) {
+													$ipk_final = 0;
+												} else {
+													$ipk_final = $ipk / $total_matkul;
+												}
 												echo $ipk_final; ?> <br><br>
 								PREDIKAT : <?php
 											if ($ipk_final >= 3.5) {
