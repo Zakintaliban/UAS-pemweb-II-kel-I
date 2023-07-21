@@ -44,9 +44,9 @@
                                         <td><?php echo $i->Tanggal_Yudisium; ?></td>
                                         <td><?php echo $i->Judul_KKW; ?></td>
                                         <td>
-                                            <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('ijazah/show/' . $i->ID); ?>">Show</a> |
-                                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('ijazah/edit/' . $i->ID); ?>">Edit</a> |
-                                            <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('ijazah/delete/' . $i->ID); ?>">Delete</a> |
+                                            <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('ijazah/show/' . $i->ID); ?>">Show</a>
+                                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('ijazah/edit/' . $i->ID); ?>">Edit</a>
+                                            <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('ijazah/delete/' . $i->ID); ?>">Delete</a>
                                             <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('ijazah/print/' . $i->ID); ?>">Print</a>
                                         </td>
                                     </tr>
