@@ -41,9 +41,9 @@ class Taruna extends CI_Controller {
     
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 2048; 
-        $config['max_width']            = 1024;
-        $config['max_height']           = 1536;
+        // $config['max_size']             = 2048; 
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 1536;
     
         $this->upload->initialize($config);
     
@@ -80,7 +80,9 @@ class Taruna extends CI_Controller {
         if (isset($data['taruna']->Foto)) {
             $imageData = "data:image/jpeg;base64," . base64_encode($data['taruna']->Foto);
         }
-        $data['imageData'] = $imageData;
+        if(isset($imageData)){
+            $data['imageData'] = $imageData;
+        }
 
         $this->load->view('taruna/edit', $data);
     }    
@@ -94,9 +96,9 @@ class Taruna extends CI_Controller {
 
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 2048; 
-        $config['max_width']            = 1024;
-        $config['max_height']           = 1536;
+        // $config['max_size']             = 2048; 
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 1536;
 
         $this->upload->initialize($config);
 
