@@ -46,7 +46,7 @@ class Nilaiku extends CI_Controller
         } else {
             $data = $this->input->post();
             $this->NilaiModel->insert_nilai($data);
-            redirect('nilai');
+            redirect('nilaiku');
         }
     }
 
@@ -73,13 +73,14 @@ class Nilaiku extends CI_Controller
         } else {
             $data = $this->input->post();
             $this->NilaiModel->update_nilai($id, $data);
-            redirect('nilai');
+            redirect('nilaiku');
         }
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $response = array();
-        if($this->NilaiModel->delete_nilai($id)) {
+        if ($this->NilaiModel->delete_nilai($id)) {
             $response['success'] = true;
             $response['message'] = 'Data successfully deleted.';
         } else {
