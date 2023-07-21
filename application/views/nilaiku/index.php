@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">List of Nilai</h4>
-                    <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('nilai/create'); ?>">Add New Nilai</a>
+                    <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('nilaiku/create'); ?>">Add New Nilai</a>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
@@ -29,8 +29,8 @@
                                         <td><?php echo $n->Nilai_Huruf; ?></td>
                                         <td><?php echo $n->Matakuliah; ?></td>
                                         <td>
-                                            <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('nilai/show/' . $n->ID); ?>">Show</a>
-                                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('nilai/edit/' . $n->ID); ?>">Edit</a>
+                                            <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('nilaiku/show/' . $n->ID); ?>">Show</a>
+                                            <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('nilaiku/edit/' . $n->ID); ?>">Edit</a>
                                             <a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $n->ID; ?>)">Delete</a>
                                         </td>
                                     </tr>
@@ -67,7 +67,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            url: "<?php echo base_url('nilai/delete/'); ?>" + id,
+                            url: "<?php echo base_url('nilaiku/delete/'); ?>" + id,
                             type: "POST",
                             data: {},
                             success: function(response) {

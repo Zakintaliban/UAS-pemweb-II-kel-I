@@ -13,18 +13,18 @@ class Nilai extends CI_Controller {
 
     public function index() {
         $data['nilai'] = $this->NilaiModel->get_all_nilai();
-        $this->load->view('nilai/index', $data);
+        $this->load->view('nilaiku/index', $data);
     }
 
     public function show($id) {
         $data['nilai'] = $this->NilaiModel->get_nilai($id);
-        $this->load->view('nilai/show', $data);
+        $this->load->view('nilaiku/show', $data);
     }
 
     public function create() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['matakuliah'] = $this->MatakuliahModel->get_all_matakuliah();
-        $this->load->view('nilai/new', $data);
+        $this->load->view('nilaiku/new', $data);
     }
 
     public function store() {
@@ -36,7 +36,7 @@ class Nilai extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $data['taruna'] = $this->TarunaModel->get_all_taruna();
             $data['matakuliah'] = $this->MatakuliahModel->get_all_matakuliah();
-            $this->load->view('nilai/new', $data);
+            $this->load->view('nilaiku/new', $data);
         } else {
             $data = $this->input->post();
             $this->NilaiModel->insert_nilai($data);
@@ -48,7 +48,7 @@ class Nilai extends CI_Controller {
         $data['nilai'] = $this->NilaiModel->get_nilai($id);
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['matakuliah'] = $this->MatakuliahModel->get_all_matakuliah();
-        $this->load->view('nilai/edit', $data);
+        $this->load->view('nilaiku/edit', $data);
     }
 
     public function update($id) {
@@ -61,7 +61,7 @@ class Nilai extends CI_Controller {
             $data['nilai'] = $this->NilaiModel->get_nilai($id);
             $data['taruna'] = $this->TarunaModel->get_all_taruna();
             $data['matakuliah'] = $this->MatakuliahModel->get_all_matakuliah();
-            $this->load->view('nilai/edit', $data);
+            $this->load->view('nilaiku/edit', $data);
         } else {
             $data = $this->input->post();
             $this->NilaiModel->update_nilai($id, $data);

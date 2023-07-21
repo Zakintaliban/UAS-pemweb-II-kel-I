@@ -6,13 +6,13 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Edit Nilai</h4>
-                    <form class="form-sample" action="<?php echo base_url('nilai/update/' . $nilai->ID); ?>" method="post">
+                    <h4 class="card-title">Add New Nilai</h4>
+                    <form class="form-sample" action="<?php echo base_url('nilaiku/store'); ?>" method="post">
                         <div class="form-group">
                             <label for="taruna">Taruna</label>
                             <select id="taruna" name="taruna" class="form-control">
                                 <?php foreach ($taruna as $t) : ?>
-                                    <option value="<?php echo $t->ID; ?>" <?php if ($nilai->Taruna == $t->ID) echo 'selected'; ?>><?php echo $t->Nama; ?></option>
+                                    <option value="<?php echo $t->ID; ?>"><?php echo $t->Nama; ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <?php echo form_error('taruna'); ?>
@@ -34,19 +34,19 @@
                         </div>
                         <div class="form-group">
                             <label for="nilai_huruf">Nilai Huruf</label>
-                            <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" value="<?php echo $nilai->Nilai_Huruf; ?>" readonly>
+                            <input type="text" id="nilai_huruf" name="nilai_huruf" class="form-control" readonly>
                             <?php echo form_error('nilai_huruf'); ?>
                         </div>
                         <div class="form-group">
                             <label for="matakuliah">Matakuliah</label>
                             <select id="matakuliah" name="matakuliah" class="form-control">
                                 <?php foreach ($matakuliah as $mk) : ?>
-                                    <option value="<?php echo $mk->ID; ?>" <?php if ($nilai->Matakuliah == $mk->ID) echo 'selected'; ?>><?php echo $mk->Matakuliah; ?></option>
+                                    <option value="<?php echo $mk->ID; ?>"><?php echo $mk->Matakuliah; ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <?php echo form_error('matakuliah'); ?>
                         </div>
-                        <input type="submit" class="btn btn-primary mr-2" value="Update Nilai">
+                        <input type="submit" class="btn btn-primary mr-2" value="Add Nilai">
                         <a href="<?php echo base_url('nilai'); ?>" class="btn btn-light">Cancel</a>
                     </form>
                 </div>
