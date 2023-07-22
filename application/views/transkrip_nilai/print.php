@@ -6,14 +6,18 @@
 	<style type="text/css">
 		@media print {
 			@page {
-				size: legal potrait;
+				size: legal landscape;
 				margin: 1cm;
 				margin-top: 0;
-        		margin-bottom: 0;
+				margin-bottom: 0;
 			}
 
 			h1 {
 				font-size: 16pt;
+			}
+
+			td {
+				word-wrap: break-word;
 			}
 		}
 
@@ -26,6 +30,36 @@
 			font-family: Cambria, Georgia, serif;
 			margin: 0;
 			padding: 0;
+			font-size: 11pt;
+		}
+
+		.table-nilai {
+			table-layout: fixed;
+			border-collapse: collapse;
+			min-height: 400px;
+		}
+
+		.td-nilai {
+			border: 1px solid #000;
+			padding: 5px;
+			height: 10px;
+			overflow: hidden;
+		}
+
+		.last-cell {
+			position: relative;
+		}
+
+		.filler {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+		}
+
+		.last-cell-content {
+			padding: 10px;
 		}
 
 		th {
@@ -201,7 +235,7 @@
 
 <body>
 	<div align="center">
-		<div style="width: 900px">
+		<div style="width: 90%">
 			<style>
 				@media print {
 					table {
@@ -281,12 +315,12 @@
 				</table>
 				<br /><br /><br />
 				<b style="
-							font-size: 20pt;
+							font-size: 16pt;
 							text-decoration: underline;
 							font-weight: bold;
 						">TRANSKRIP NILAI AKADEMIK</b><br />
 				<br /><br />
-				<table class="data" width="70%" align="left" style="margin-bottom: 1rem;">
+				<table class="data" width="60%" align="left" style="margin-bottom: 1rem;">
 					<tbody>
 						<tr>
 							<td>NAMA</td>
@@ -321,7 +355,24 @@
 					</tbody>
 				</table>
 
-				<table class="tb_data border" border="2" width="100%" style="column-span: all;border-top: 6px double black;border-bottom: 6px double black;">
+				<?php
+
+				$leftcontent = array();
+				$rightcontent = array();
+
+				foreach ($nilai_transkrip as $nilai_data => $value_all) {
+					if ($nilai_data == "Semester I" || $nilai_data == "Semester II" || $nilai_data == "Semester III") {
+						$leftcontent[$nilai_data] = $value_all;
+					} else {
+						$rightcontent[$nilai_data] = $value_all;
+					}
+				}
+
+				?>
+
+
+
+				<table class="tb_data border table-nilai" border="2" width="49%" style="column-span: all;border-top: 6px double black;border-bottom: 6px double black;float: left;">
 					<thead>
 						<tr>
 							<th width="30">NO</th>
@@ -341,7 +392,7 @@
 						$ujian_akhir = [];
 						?>
 
-						<?php foreach ($nilai_transkrip as $nilai_data => $value_all) : ?>
+						<?php foreach ($leftcontent as $nilai_data => $value_all) : ?>
 
 							<?php if ($nilai_data === 'UJIAN AKHIR PROGRAM STUDI') {
 								$ujian_akhir = $value_all;
@@ -349,21 +400,72 @@
 							}  ?>
 
 							<tr>
-								<td align="center"></td>
-								<td align="center"></td>
-								<td align="center"><b><?php echo $nilai_data ?></b></td>
-								<td align="center"></td>
-								<td align="center"></td>
+								<td class="td-nilai" align="center"></td>
+								<td class="td-nilai" align="center"></td>
+								<td class="td-nilai" align="center"><b><?php echo $nilai_data ?></b></td>
+								<td class="td-nilai" align="center"></td>
+								<td class="td-nilai" align="center"></td>
 							</tr>
 							<?php foreach ($value_all as $value) : ?>
 								<?php $sks = $sks + $value->SKS;
 								$ipk = $ipk + $value->Nilai_Angka; ?>
 								<tr>
-									<td align="center"><?php echo $counter ?></td>
-									<td align="center"><?php echo $value->Kode ?></td>
-									<td style=" white-space: nowrap; padding: 2px;"><?php echo $value->Matakuliah ?></td>
-									<td align="center"><?php echo $value->SKS ?></td>
-									<td align="center"><?php echo $value->Nilai_Huruf ?></td>
+									<td class="td-nilai" align="center"><?php echo $counter ?></td>
+									<td class="td-nilai" align="center"><?php echo $value->Kode ?></td>
+									<td class="td-nilai" style="padding: 2px;"><?php echo $value->Matakuliah ?></td>
+									<td class="td-nilai" align="center"><?php echo $value->SKS ?></td>
+									<td class="td-nilai" align="center"><?php echo $value->Nilai_Huruf ?></td>
+								</tr>
+							<?php $counter++;
+								$total_matkul++;
+							endforeach; ?>
+						<?php endforeach; ?>
+						<tr class="last-row">
+							<td class="last-cell" align="center"></td>
+							<td class="last-cell" align="center"></td>
+							<td class="last-cell" align="center"></td>
+							<td class="last-cell" align="center"></td>
+							<td class="last-cell" align="center"></td>
+							<div class="filler"></div>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="tb_data border table-nilai" border="2" width="49%" style="column-span: all;border-top: 6px double black;border-bottom: 6px double black; float: right;">
+					<thead>
+						<tr>
+							<th width="30">NO</th>
+							<th width="70">KODE</th>
+							<th>MATA KULIAH</th>
+							<th width="40">SKS</th>
+							<th width="60">NILAI</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<?php foreach ($rightcontent as $nilai_data => $value_all) : ?>
+
+							<?php if ($nilai_data === 'UJIAN AKHIR PROGRAM STUDI') {
+								$ujian_akhir = $value_all;
+								continue;
+							}  ?>
+
+							<tr>
+								<td class="td-nilai" align="center"></td>
+								<td class="td-nilai" align="center"></td>
+								<td class="td-nilai" align="center"><b><?php echo $nilai_data ?></b></td>
+								<td class="td-nilai" align="center"></td>
+								<td class="td-nilai" align="center"></td>
+							</tr>
+							<?php foreach ($value_all as $value) : ?>
+								<?php $sks = $sks + $value->SKS;
+								$ipk = $ipk + $value->Nilai_Angka; ?>
+								<tr>
+									<td class="td-nilai" align="center"><?php echo $counter ?></td>
+									<td class="td-nilai" align="center"><?php echo $value->Kode ?></td>
+									<td class="td-nilai" style="padding: 2px;"><?php echo $value->Matakuliah ?></td>
+									<td class="td-nilai" align="center"><?php echo $value->SKS ?></td>
+									<td class="td-nilai" align="center"><?php echo $value->Nilai_Huruf ?></td>
 								</tr>
 							<?php $counter++;
 								$total_matkul++;
@@ -372,25 +474,26 @@
 
 						<?php foreach ($ujian_akhir as $item) : ?>
 							<tr>
-								<td align="center"><?php echo $counter ?></td>
-								<td style="
+								<td class="td-nilai" align="center"><?php echo $counter ?></td>
+								<td class="td-nilai" style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
-										white-space: nowrap; padding: 2px;
+										padding: 2px;
 									" align="left" colspan="3">
 									<b>UJIAN AKHIR PROGRAM STUDI:</b><br><br> <?php echo $item->Matakuliah ?><br><br>
 								</td>
-								<td align="center" style="
+								<td class="td-nilai" align="center" style="
 										border-top: solid 2px black;
-										white-space: nowrap; padding: 2px;"><?php echo $item->Nilai_Huruf ?></td>
+										padding: 2px;"><?php echo $item->Nilai_Huruf ?></td>
 							</tr>
-						<?php $counter++; endforeach; ?>
+						<?php $counter++;
+						endforeach; ?>
 						<tr>
-							<td align="center"><?php echo $counter ?></td>
+							<td class="td-nilai" align="center"><?php echo $counter ?></td>
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
-										white-space: nowrap; padding: 2px;" colspan="4">
+										padding: 2px;" colspan="4">
 								<b>JUDUL KERTAS KERJA WAJIB</b><br><br>
 								<center><i>
 										<?php echo $ijazah->Judul_KKW; ?><br><br>
@@ -398,21 +501,17 @@
 							</td>
 						</tr>
 						<tr>
-							<td align="center"><?php echo $counter + 1 ?></td>
-							<td style="
-										border-bottom: solid 2px black;
-										border-top: solid 2px black;
-										white-space: nowrap; padding: 2px;
-									" align="left" colspan="4">
+							<td class="td-nilai" align="center"><?php echo $counter + 1 ?></td>
+							<td class="td-nilai" align="left" colspan="4">
 								<br>
 								JUMLAH SKS : <?php echo $sks; ?> <br><br>
 								IP KUMULATIF : <?php
-												if ($ipk==0 ||$total_matkul == 0 ) {
+												if ($ipk == 0 || $total_matkul == 0) {
 													$ipk_final = 0;
 												} else {
 													$ipk_final = $ipk / $total_matkul;
 												}
-												echo $ipk_final; ?> <br><br>
+												echo round($ipk_final, 2); ?> <br><br>
 								PREDIKAT : <?php
 											if ($ipk_final >= 3.5) {
 												echo "DENGAN PUJIAN";
@@ -426,11 +525,19 @@
 											?><br><br>
 							</td>
 						</tr>
+						<tr class="last-row" style="
+										border-bottom: solid 0px black;
+										border-top: solid 0px black;
+										padding: 2px;">
+							<td class="last-cell" align="center"></td>
+							<td class="last-cell" align="center" colspan="4"></td>
+							<div class="filler"></div>
+						</tr>
 					</tbody>
 				</table>
-				<br />
-				<p align="left">KETERANGAN : A=4;AB=3,50;B=3;BC=2,50;C=2;D=1;E=0</p>
 
+				<br />
+				<pre style="text-align: left;clear:both;"><br>KETERANGAN : A=4;AB=3,50;B=3;BC=2,50;C=2;D=1;E=0</pre
 				<br />
 				<table width="100%">
 					<tbody>
