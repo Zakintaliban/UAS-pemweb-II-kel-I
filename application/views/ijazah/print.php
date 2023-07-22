@@ -6,7 +6,7 @@
   <style>
     @media print {
       @page {
-        size: portrait;
+        size: Legal landscape;
         margin: 0;
       }
 
@@ -50,15 +50,15 @@
   </div>
 
   <br>
+  <br>
 
   <center>
     <h1>IJAZAH</h1>
   </center>
 
   <br>
-  <br>
 
-  <div style="justify-content: space-between; justify-items: center; display: flex; margin-left: 6rem; margin-right: 8rem; line-height: 50%;">
+  <div style="justify-content: space-between; justify-items: center; display: flex; margin-left: 18rem; margin-right: 30rem; line-height: 50%;">
     <div>
       <p>Memberikan Ijazah Kepada </p>
       <p>Tempat & Tanggal Lahir </p>
@@ -80,32 +80,30 @@
     </div>
   </div>
 
-  <div style="margin: 4rem; text-align: justify;">
+  <div style="margin-left: 8rem; margin-right: 8rem; text-align: justify;">
     <p>Ijazah ini diberikan Surat Keputusan Direktur Politeknik Merdeka Nomor : <?= $ijazah->Nomor_SK; ?> Tahun <?= date('Y') ?> setelah yang
       bersangkutan memenuhi semua persyaratan yang telah ditentukan dan kepadanya dilimpahkan segala wewenang dan hak yang
       berhubungan dengan Ijazah yang dimilikinya serta berhak menggunakan Gelar Akademik <strong>Ahli Madya Komputer (<?= $ijazah->Gelar_Akademik; ?>).</strong></p>
   </div>
 
   <br>
-  <br>
-  <br>
 
-  <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 6rem; margin-left: 6rem;">
+  <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 18rem; margin-left: 18rem;">
     <div>
       <center>
-        <p>WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></p>
+        <h2>WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></h2>
         <p style="margin-bottom: 10rem;">Politeknik Merdeka</p>
-        <p><?= $wakil_direktur->Nama ?></p>
-        <p><?= $wakil_direktur->NIP ?></p>
+        <h2><?= $wakil_direktur->Nama ?></h2>
+        <h2><?= $wakil_direktur->NIP ?></h2>
       </center>
     </div>
     <div>
       <center>
         <p>Jakarta, <?= convert_date(date('Y-m-d'))?></p>
-        <p>DIREKTUR</p>
+        <h2>DIREKTUR</h2>
         <p style="margin-bottom: 8rem;">Politeknik Merdeka</p>
-        <p><?= $direktur->Nama ?></p>
-        <p><?= $direktur->NIP ?></p>
+        <h2><?= $direktur->Nama ?></h2>
+        <h2><?= $direktur->NIP ?></h2>
       </center>
     </div>
   </div>
