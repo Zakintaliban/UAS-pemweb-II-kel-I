@@ -2,14 +2,23 @@
 class NilaiModel extends CI_Model {
 
     public function get_all_nilai() {
-        $query = $this->db->get('Nilai');
+        $this->db->select('Nilai.*, Taruna.Nama as Taruna_Name, Matakuliah.Matakuliah as Matakuliah_Name');
+        $this->db->from('Nilai');
+        $this->db->join('Taruna', 'Taruna.ID = Nilai.Taruna');
+        $this->db->join('Matakuliah', 'Matakuliah.ID = Nilai.Matakuliah');
+        $query = $this->db->get();
         return $query->result();
     }
-
+    
     public function get_nilai($id) {
-        $query = $this->db->where('ID', $id)->get('Nilai');
+        $this->db->select('Nilai.*, Taruna.Nama as Taruna_Name, Matakuliah.Matakuliah as Matakuliah_Name');
+        $this->db->from('Nilai');
+        $this->db->join('Taruna', 'Taruna.ID = Nilai.Taruna');
+        $this->db->join('Matakuliah', 'Matakuliah.ID = Nilai.Matakuliah');
+        $this->db->where('Nilai.ID', $id);
+        $query = $this->db->get();
         return $query->row();
-    }
+    }    
 
 	public function get_nilai_by_taruna($id) {
         $query = $this->db->where('Taruna', $id)->get('Nilai');

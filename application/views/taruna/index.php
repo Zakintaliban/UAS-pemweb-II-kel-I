@@ -27,17 +27,9 @@
 										<td><?php echo $t->ID; ?></td>
 										<td><?php echo $t->Nama; ?></td>
 										<td><?php echo $t->Nomor_Taruna; ?></td>
-										<td>
-											<?php foreach ($kota as $kt) : ?>
-												<?php if ($t->Tempat_Lahir == $kt->ID) echo $kt->Nama; ?>
-											<?php endforeach; ?>
-										</td>
+										<td><?php echo $t->Kota_Nama; ?></td>
 										<td><?php echo $t->Tanggal_Lahir; ?></td>
-										<td>
-											<?php foreach ($program_studi as $ps) : ?>
-												<?php if ($t->Tempat_Lahir == $ps->ID) echo $ps->Nama; ?>
-											<?php endforeach; ?>
-										</td>
+										<td><?php echo $t->Program_Studi_Nama; ?></td>
 										<td>
 											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('taruna/show/' . $t->ID); ?>">Show</a>
 											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('taruna/edit/' . $t->ID); ?>">Edit</a>

@@ -27,10 +27,10 @@
                         <div class="col-md-6">
                             <address class="text-primary">
                                 <p class="font-weight-bold">
-                                    <?php echo $ijazah->Taruna; ?>
+                                    <?php echo $ijazah->Taruna_Name; ?>
                                 </p>
                                 <p class="font-weight-bold">
-                                    <?php echo $ijazah->Program_Studi; ?>
+                                    <?php echo $ijazah->Program_Studi_Name; ?>
                                 </p>
                                 <p class="font-weight-bold">
                                     <?php echo $ijazah->Tanggal_Ijazah; ?>
@@ -45,10 +45,10 @@
                                     <?php echo $ijazah->Nomor_SK; ?>
                                 </p>
                                 <p class="font-weight-bold">
-                                    <?php echo $ijazah->Wakil_Direktur; ?>
+                                    <?php echo $ijazah->Wakil_Direktur_Name; ?>
                                 </p>
                                 <p class="font-weight-bold">
-                                    <?php echo $ijazah->Direktur; ?>
+                                    <?php echo $ijazah->Direktur_Name; ?>
                                 </p>
                                 <p class="font-weight-bold">
                                     <?php echo $ijazah->Nomor_Ijazah; ?>
