@@ -501,7 +501,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="td-nilai" align="center"><?php echo $counter + 1 ?></td>
+							<td class="td-nilai" align="center"></td>
 							<td class="td-nilai" align="left" colspan="4">
 								<br>
 								JUMLAH SKS : <?php echo $sks; ?> <br><br>
