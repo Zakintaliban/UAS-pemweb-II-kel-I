@@ -22,6 +22,7 @@
 <script src="<?php echo base_url('skydash/js/template.js'); ?>"></script>
 <script src="<?php echo base_url('skydash/js/settings.js'); ?>"></script>
 <script src="<?php echo base_url('skydash/js/todolist.js'); ?>"></script>
+<script src="<?php echo base_url('skydash/js/data-table.js'); ?>"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
 <script src="<?php echo base_url('skydash/js/dashboard.js'); ?>"></script>
