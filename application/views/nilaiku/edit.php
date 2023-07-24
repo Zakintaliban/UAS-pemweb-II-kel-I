@@ -47,7 +47,7 @@
                             <?php echo form_error('matakuliah'); ?>
                         </div>
                         <input type="submit" class="btn btn-primary mr-2" value="Update Nilai">
-                        <a href="<?php echo base_url('nilai'); ?>" class="btn btn-light">Cancel</a>
+                        <a href="<?php echo base_url('nilaiku'); ?>" class="btn btn-light">Cancel</a>
                     </form>
                 </div>
             </div>
