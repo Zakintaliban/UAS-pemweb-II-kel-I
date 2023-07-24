@@ -4,7 +4,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="col-12 col-xl-8 mb-4 mb-xl-4">
-            <h3 class="font-weight-bold">Halo, Selamat Datang! 🏫
+            <h3 class="font-weight-bold">Halo, Selamat Datang Admin! 🏫
             </h3>
             <h6 class="font-weight-normal mb-0 text-primary">Nikmati kemudahan pengelolaan di LMS, platform digital Anda untuk pendidikan!</h6>
         </div>
