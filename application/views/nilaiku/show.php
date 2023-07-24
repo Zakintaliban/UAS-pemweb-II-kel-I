@@ -19,7 +19,7 @@
                         <div class="col-md-6">
                             <address class="text-primary">
                                 <p class="font-weight-bold">
-                                    <?php echo $nilai->Taruna; ?>
+                                    <?php echo $nilai->Taruna_Name; ?> <!-- Display Taruna name -->
                                 </p>
                                 <p class="font-weight-bold">
                                     <?php echo $nilai->Nilai_Angka; ?>
@@ -28,7 +28,7 @@
                                     <?php echo $nilai->Nilai_Huruf; ?>
                                 </p>
                                 <p class="font-weight-bold">
-                                    <?php echo $nilai->Matakuliah; ?>
+                                    <?php echo $nilai->Matakuliah_Name; ?> <!-- Display Matakuliah name -->
                                 </p>
                             </address>
                         </div>

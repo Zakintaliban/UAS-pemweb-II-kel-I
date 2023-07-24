@@ -14,15 +14,11 @@ class Taruna extends CI_Controller {
 
     public function index() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
-		$data['kota'] = $this->TarunaModel->get_all_kota();
-		$data['program_studi'] = $this->TarunaModel->get_all_program_studi();
         $this->load->view('taruna/index', $data);
     }
 
     public function show($id) {
         $data['taruna'] = $this->TarunaModel->get_taruna($id);
-		$data['kota'] = $this->KotaModel->get_kota($data['taruna']->Tempat_Lahir);
-		$data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['taruna']->Program_Studi);
         $this->load->view('taruna/show', $data);
     }
 

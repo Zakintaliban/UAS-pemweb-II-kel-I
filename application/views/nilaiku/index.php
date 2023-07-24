@@ -24,10 +24,10 @@
                                 <?php foreach ($nilai as $n) : ?>
                                     <tr>
                                         <td><?php echo $n->ID; ?></td>
-                                        <td><?php echo $n->Taruna; ?></td>
+                                        <td><?php echo $n->Taruna_Name; ?></td> <!-- Display Taruna name -->
                                         <td><?php echo $n->Nilai_Angka; ?></td>
                                         <td><?php echo $n->Nilai_Huruf; ?></td>
-                                        <td><?php echo $n->Matakuliah; ?></td>
+                                        <td><?php echo $n->Matakuliah_Name; ?></td> <!-- Display Matakuliah name -->
                                         <td>
                                             <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('nilaiku/show/' . $n->ID); ?>">Show</a>
                                             <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('nilaiku/edit/' . $n->ID); ?>">Edit</a>
