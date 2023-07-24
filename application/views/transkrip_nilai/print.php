@@ -6,7 +6,7 @@
 	<style type="text/css">
 		@media print {
 			@page {
-				size: legal landscape;
+				size: legal potrait;
 				margin: 1cm;
 				margin-top: 0;
 				margin-bottom: 0;
