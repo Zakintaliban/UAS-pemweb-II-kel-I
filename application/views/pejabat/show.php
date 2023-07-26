@@ -29,6 +29,7 @@
 					</div>
 					<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('pejabat/edit/' . $pejabat->ID); ?>">Edit</a>
 					<a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('pejabat/delete/' . $pejabat->ID); ?>">Delete</a>
+					<a href="<?php echo base_url('pejabat'); ?>" class="btn btn-light">Cancel</a>
 				</div>
 			</div>
 		</div>
