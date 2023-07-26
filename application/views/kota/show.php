@@ -27,6 +27,7 @@
                     </div>
                     <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('kota/edit/' . $kota->ID); ?>">Edit</a>
                     <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('kota/delete/' . $kota->ID); ?>">Delete</a>
+                    <a href="<?php echo base_url('kota'); ?>" class="btn btn-light">Cancel</a>
                 </div>
             </div>
         </div>

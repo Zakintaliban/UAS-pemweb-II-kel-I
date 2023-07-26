@@ -29,6 +29,7 @@
 					</div>
 					<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('program_studi/edit/' . $program_studi->ID); ?>">Edit</a>
 					<a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('program_studi/delete/' . $program_studi->ID); ?>">Delete</a>
+					<a href="<?php echo base_url('program_studi'); ?>" class="btn btn-light">Cancel</a>
 				</div>
 			</div>
 		</div>
