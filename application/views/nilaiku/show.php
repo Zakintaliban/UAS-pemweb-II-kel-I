@@ -35,6 +35,7 @@
                     </div>
                     <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('nilaiku/edit/' . $nilai->ID); ?>">Edit</a>
                     <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('nilaiku/delete/' . $nilai->ID); ?>">Delete</a>
+                    <a href="<?php echo base_url('nilaiku'); ?>" class="btn btn-light">Cancel</a>
                 </div>
             </div>
         </div>

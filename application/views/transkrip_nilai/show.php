@@ -24,6 +24,7 @@
 						</div>
 					</div>
 					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/print/' . $transkrip_nilai->ID); ?>">Print</a>
+					<a href="<?php echo base_url('transkrip_nilai'); ?>" class="btn btn-light">Cancel</a>
 				</div>
 			</div>
 		</div>

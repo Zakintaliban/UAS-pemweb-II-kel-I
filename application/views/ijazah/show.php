@@ -68,6 +68,7 @@
                     <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('ijazah/edit/' . $ijazah->ID); ?>">Edit</a>
                     <a class="btn btn-inverse-danger btn-fw" href="<?php echo base_url('ijazah/delete/' . $ijazah->ID); ?>">Delete</a>
                     <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('ijazah/print/' . $ijazah->ID); ?>" target="_blank">Print</a>
+                    <a href="<?php echo base_url('ijazah'); ?>" class="btn btn-light">Cancel</a> 
                 </div>
             </div>
         </div>
