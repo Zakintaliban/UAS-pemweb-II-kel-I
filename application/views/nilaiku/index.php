@@ -9,7 +9,7 @@
                     <h4 class="card-title">List of Nilai</h4>
                     <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('nilaiku/create'); ?>">Add New Nilai</a>
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table id="order-listing" class="table">
                             <thead>
                                 <tr>
                                     <th>ID</th>

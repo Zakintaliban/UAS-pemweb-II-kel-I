@@ -26,19 +26,20 @@
                                     <th>Judul KKW</th>
                                     <th>Action</th>
                                 </tr>
+                                
                             </thead>
                             <tbody>
                                 <?php foreach ($ijazah as $i) : ?>
                                     <tr>
                                         <td><?php echo $i->ID; ?></td>
-                                        <td><?php echo $i->Taruna_Name; ?></td>
-                                        <td><?php echo $i->Program_Studi_Name; ?></td>
+                                        <td><?php echo $i->Taruna; ?></td>
+                                        <td><?php echo $i->Program_Studi; ?></td>
                                         <td><?php echo $i->Tanggal_Ijazah; ?></td>
                                         <td><?php echo $i->Tanggal_Pengesahan; ?></td>
                                         <td><?php echo $i->Gelar_Akademik; ?></td>
                                         <td><?php echo $i->Nomor_SK; ?></td>
-                                        <td><?php echo $i->Wakil_Direktur_Name; ?></td>
-                                        <td><?php echo $i->Direktur_Name; ?></td>
+                                        <td><?php echo $i->Wakil_Direktur; ?></td>
+                                        <td><?php echo $i->Direktur; ?></td>
                                         <td><?php echo $i->Nomor_Ijazah; ?></td>
                                         <td><?php echo $i->Nomor_Seri; ?></td>
                                         <td><?php echo $i->Tanggal_Yudisium; ?></td>
