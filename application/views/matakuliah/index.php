@@ -9,7 +9,7 @@
                     <h4 class="card-title">List of Mata Kuliah</h4>
                     <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('matakuliah/create'); ?>">Add New Mata Kuliah</a>
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                    <table id="order-listing" class="table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
