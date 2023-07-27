@@ -8674,7 +8674,7 @@
   --gray-lighter: #e8eff4;
   --gray-lightest: #e6e9ed;
   --black: #000000;
-  --primary: #4B49AC;
+  --primary: #273746;
   --secondary: #a3a4a5;
   --success: #57B657;
   --info: #248AFD;
@@ -22077,25 +22077,25 @@ code {
 }
 
 .card.card-tale {
-  background: #7DA0FA;
+  background: #F5B041;
   color: #ffffff;
 }
 
 .card.card-tale:hover {
-  background: #96b2fb;
+  background: #AEB6BF;
 }
 
 .card.card-dark-blue {
-  background: #4747A1;
+  background: #D35400;
   color: #ffffff;
 }
 
 .card.card-dark-blue:hover {
-  background: #5050b2;
+  background: #5D6D7E;
 }
 
 .card.card-light-blue {
-  background: #7978E9;
+  background: #73C6B6;
   color: #ffffff;
 }
 
@@ -22104,7 +22104,7 @@ code {
 }
 
 .card.card-light-danger {
-  background: #F3797E;
+  background: #EC7063;
   color: #ffffff;
 }
 
