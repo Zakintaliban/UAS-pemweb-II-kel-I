@@ -10,7 +10,7 @@
 					<h4 class="card-title">List of Program Studi</h4>
 					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('program_studi/create'); ?>">Add New Program Studi</a>
 					<div class="table-responsive">
-						<table class="table table-hover">
+					<table id="order-listing" class="table">
 							<thead>
 								<tr>
 									<th>ID</th>

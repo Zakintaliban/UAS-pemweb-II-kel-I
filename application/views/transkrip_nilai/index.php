@@ -9,7 +9,7 @@
 					<h4 class="card-title">List of Transkrip Nilai</h4>
 					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/create'); ?>">Add New Transkrip Nilai</a>
 					<div class="table-responsive">
-						<table class="table table-hover">
+					<table id="order-listing" class="table">
 							<thead>
 								<tr>
 									<th>ID</th>
