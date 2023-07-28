@@ -96,3 +96,7 @@
                 });
             }
         </script>
+
+</body>
+
+</html>

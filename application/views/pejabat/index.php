@@ -92,3 +92,7 @@
 				});
 			}
 		</script>
+
+</body>
+
+</html>

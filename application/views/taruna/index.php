@@ -94,3 +94,7 @@
 				});
 			}
 		</script>
+
+</body>
+
+</html>

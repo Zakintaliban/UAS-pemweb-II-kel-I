@@ -78,3 +78,7 @@
 		</script>
 
 		<?php $this->load->view('footer'); ?>
+
+		</body>
+
+</html>

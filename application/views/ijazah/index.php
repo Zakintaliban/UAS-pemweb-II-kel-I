@@ -78,8 +78,7 @@
 											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('ijazah/show/' . $i->ID); ?>">Show</a>
 											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('ijazah/edit/' . $i->ID); ?>">Edit</a>
 											<a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $i->ID; ?>)">Delete</a>
-											<!-- <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('ijazah/print/' . $i->ID); ?>">Print</a> -->
-											<button class="btn btn-inverse-primary btn-fw printButton" data-id="<?php echo $i->ID; ?>">Print</button>
+											<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('ijazah/print/' . $i->ID); ?>">Print</a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
@@ -99,42 +98,6 @@
 
 		<!-- SweetAlert JS -->
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-		<script>
-			$(document).ready(function() {
-				$(".printButton").on("click", function(e) {
-					e.preventDefault();
-					var printId = $(this).data("id");
-
-					var printUrl = "<?= base_url('ijazah/print/'); ?>" + printId;
-
-					$.ajax({
-						url: printUrl,
-						method: "GET",
-						dataType: "html",
-						success: function(response) {
-							$("#printContent").html(response);
-
-							printDiv("printContent");
-						},
-						error: function() {
-							console.error("Gagal memuat halaman cetak.");
-						}
-					});
-				});
-
-				function printDiv(divId) {
-					var content = document.getElementById(divId).innerHTML;
-					var myWindow = window.open("", "_blank",'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,copyhistory=yes,resizable=no');
-					myWindow.document.write(content);
-					myWindow.document.close();
-					myWindow.focus();
-					myWindow.print();
-					myWindow.print()
-					myWindow.close();
-				}
-			});
-		</script>
 
 		<script>
 			function deleteData(id) {
@@ -175,3 +138,7 @@
 				});
 			}
 		</script>
+
+</body>
+
+</html>

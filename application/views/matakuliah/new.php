@@ -88,3 +88,7 @@
                 document.getElementById('nilai_huruf').value = nilaiHuruf;
             });
         </script>
+
+</body>
+
+</html>

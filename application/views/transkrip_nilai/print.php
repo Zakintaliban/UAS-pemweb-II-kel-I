@@ -611,14 +611,13 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		window.onload = function() {
+			window.print();
+			onafterprint = function () {
+					window.location.href = "javascript:history.back()";
+			}
+		};
+	</script>
 </body>
-<script>
-	window.onload = function() {
-		window.print();
-		onafterprint = function () {
-                window.location.href = "javascript:history.back()";
-        }
-	};
-</script>
-
 </html>

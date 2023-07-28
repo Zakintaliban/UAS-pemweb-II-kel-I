@@ -127,6 +127,15 @@
 
     document.getElementById("formattedDate").textContent = formattedDate;
   </script>
+
+<script>
+	window.onload = function() {
+		window.print();
+		onafterprint = function () {
+                window.location.href = "javascript:history.back()";
+        }
+	};
+</script>
 </body>
 
 </html>
