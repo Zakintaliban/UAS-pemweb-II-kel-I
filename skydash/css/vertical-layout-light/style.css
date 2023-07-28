@@ -30457,7 +30457,7 @@ div.tagsinput span.tag a {
 
 .settings-panel .chat-list .list .info p:last-child {
   opacity: 0.5;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .rtl .settings-panel .chat-list .list .info p:last-child {
