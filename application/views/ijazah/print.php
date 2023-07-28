@@ -83,7 +83,8 @@
   <br>
 
 
-  <p style="text-align: right; margin-right: 18rem; margin-bottom: -0.5rem; font-family: 'Bookman Old Style', sans-serif; font-size: 11pt;">Jakarta, <?= $ijazah->Tanggal_Pengesahan ?></p>
+  <p id="originalDate" style="display: none;">Jakarta, <?= $ijazah->Tanggal_Pengesahan ?></p>
+  <p id="formattedDate" style="text-align: right; margin-right: 19rem; margin-bottom: -0.5rem; font-family: 'Bookman Old Style', sans-serif; font-size: 11pt;"></p>
 
   <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 18rem; margin-left: 18rem;">
     <div style="text-align: center;">
@@ -100,10 +101,37 @@
     </div>
   </div>
 
-  <script>
+  <!-- <script>
     window.onload = function() {
       window.print();
     };
+  </script> -->
+
+  <script>
+    function formatDate(inputDate) {
+      var parts = inputDate.split(", ");
+      var city = parts[0];
+      var datePart = parts[1];
+
+      var dateParts = datePart.split("-");
+      var year = dateParts[0];
+      var month = parseInt(dateParts[1]);
+      var day = parseInt(dateParts[2]);
+
+      var monthNames = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+      ];
+
+      var formattedDate = city + ", " + day + " " + monthNames[month - 1] + " " + year;
+      return formattedDate;
+    }
+
+    var originalDateText = document.getElementById("originalDate").textContent;
+
+    var formattedDate = formatDate(originalDateText);
+
+    document.getElementById("formattedDate").textContent = formattedDate;
   </script>
 </body>
 
