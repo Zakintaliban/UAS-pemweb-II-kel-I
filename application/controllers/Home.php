@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
+	public function __construct() {
+		parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
+    }
+
     public function index() {
         $data['program_studi_count'] = $this->db->count_all('Program_Studi');
         $data['kota_count'] = $this->db->count_all('Kota');

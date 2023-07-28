@@ -5,6 +5,10 @@ class Taruna extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('TarunaModel');
 		$this->load->model('KotaModel');
 		$this->load->model('ProgramStudiModel');
@@ -34,34 +38,34 @@ class Taruna extends CI_Controller {
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
         $this->form_validation->set_rules('program_studi', 'Program Studi', 'required');
-    
+
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|jpeg|png|bmp|tiff|ico|svg|webp|heif|raw|indd|ai|eps';
-        $config['max_size']             = 2048; 
+        $config['max_size']             = 2048;
         $config['max_width']            = 1024;
         $config['max_height']           = 1536;
-    
+
         $this->upload->initialize($config);
-    
+
         $uploadSuccessful = $this->upload->do_upload('foto');
-    
+
         if ($this->form_validation->run() == FALSE || !$uploadSuccessful) {
             $data['program_studi'] = $this->TarunaModel->get_all_program_studi();
             $data['kota'] = $this->TarunaModel->get_all_kota();
-            $data['error'] = $this->upload->display_errors(); 
+            $data['error'] = $this->upload->display_errors();
             $this->load->view('taruna/new', $data);
         } else {
             $data = $this->input->post();
             $upload_data = $this->upload->data();
-    
+
             // Read the file content
             $data['foto'] = file_get_contents($upload_data['full_path']);
-    
+
             $this->TarunaModel->insert_taruna($data);
-    
+
             // Optionally delete the file after storing its content in the database
             unlink($upload_data['full_path']);
-    
+
             redirect('taruna');
         }
     }
@@ -81,7 +85,7 @@ class Taruna extends CI_Controller {
         }
 
         $this->load->view('taruna/edit', $data);
-    }    
+    }
 
     public function update($id) {
         $this->form_validation->set_rules('nama', 'Nama', 'required');
@@ -92,7 +96,7 @@ class Taruna extends CI_Controller {
 
         $config['upload_path']          = './uploads/';
         $config['allowed_types']        = 'gif|jpg|jpeg|png|bmp|tiff|ico|svg|webp|heif|raw|indd|ai|eps';
-        $config['max_size']             = 2048; 
+        $config['max_size']             = 2048;
         $config['max_width']            = 1024;
         $config['max_height']           = 1536;
 

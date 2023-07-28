@@ -5,6 +5,10 @@ class Matakuliah extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('MatakuliahModel');
         $this->load->library('form_validation');
     }
@@ -30,7 +34,7 @@ class Matakuliah extends CI_Controller {
         $this->form_validation->set_rules('nilai_angka', 'Nilai Angka', 'required|numeric');
         $this->form_validation->set_rules('nilai_huruf', 'Nilai Huruf', 'required');
         $this->form_validation->set_rules('semester', 'Semester', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('matakuliah/new');
         } else {
@@ -52,7 +56,7 @@ class Matakuliah extends CI_Controller {
         $this->form_validation->set_rules('nilai_angka', 'Nilai Angka', 'required|numeric');
         $this->form_validation->set_rules('nilai_huruf', 'Nilai Huruf', 'required');
         $this->form_validation->set_rules('semester', 'Semester', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['matakuliah'] = $this->MatakuliahModel->get_matakuliah($id);
             $this->load->view('matakuliah/edit', $data);

@@ -5,6 +5,10 @@ class Program_Studi extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('ProgramStudiModel');
         $this->load->library('form_validation');
     }
@@ -28,7 +32,7 @@ class Program_Studi extends CI_Controller {
         $this->form_validation->set_rules('program_pendidikan', 'Program Pendidikan', 'required');
         $this->form_validation->set_rules('akreditasi', 'Akreditasi', 'required');
         $this->form_validation->set_rules('sk_akreditasi', 'SK Akreditasi', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('program_studi/new');
         } else {
@@ -48,7 +52,7 @@ class Program_Studi extends CI_Controller {
         $this->form_validation->set_rules('program_pendidikan', 'Program Pendidikan', 'required');
         $this->form_validation->set_rules('akreditasi', 'Akreditasi', 'required');
         $this->form_validation->set_rules('sk_akreditasi', 'SK Akreditasi', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($id);
             $this->load->view('program_studi/edit', $data);

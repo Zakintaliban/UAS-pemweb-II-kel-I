@@ -9,4 +9,7 @@
     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('nilaiku'); ?>"><i class="mdi mdi-pen menu-icon"></i><span class="menu-title">Nilai</span></a></li>
     <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('transkrip_nilai'); ?>"><i class="mdi mdi-newspaper menu-icon"></i><span class="menu-title">Transkrip Nilai</span></a></li>
   </ul>
+	<ul class="nav" style="position:unset; bottom:0;">
+		<li class="nav-item"> <a class="nav-link" href="<?= site_url('auth/logout') ?>"><i class="mdi mdi-logout menu-icon"></i><span class="menu-title">Logout</span></a></li>
+</ul>
 </nav>

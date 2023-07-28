@@ -7,6 +7,10 @@ class Nilaiku extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('NilaiModel');
         $this->load->model('TarunaModel');
         $this->load->model('MatakuliahModel');

@@ -5,12 +5,17 @@ class Ijazah extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('IjazahModel');
         $this->load->model('TarunaModel');
         $this->load->model('KotaModel');
         $this->load->model('ProgramStudiModel');
         $this->load->model('PejabatModel');
         $this->load->library('form_validation');
+		$this->load->model('AuthModel');
     }
 
     public function print($id) {
