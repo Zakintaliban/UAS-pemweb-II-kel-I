@@ -489,7 +489,7 @@
 						<?php $counter++;
 						endforeach; ?>
 						<tr>
-							<td class="td-nilai" align="center"><?php echo $counter ?></td>
+							<td class="td-nilai" align="center"></td>
 							<td style="
 										border-bottom: solid 2px black;
 										border-top: solid 2px black;
