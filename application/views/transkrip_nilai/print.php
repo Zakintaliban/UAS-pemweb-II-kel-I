@@ -7,7 +7,7 @@
 		@media print {
 			@page {
 				size: legal potrait;
-				margin: 1cm;
+				margin: 0.3cm;
 				margin-top: 0;
 				margin-bottom: 0;
 			}
@@ -36,7 +36,7 @@
 		.table-nilai {
 			table-layout: fixed;
 			border-collapse: collapse;
-			min-height: 400px;
+			min-height: 750px;
 		}
 
 		.td-nilai {
@@ -235,7 +235,7 @@
 
 <body>
 	<div align="center">
-		<div style="width: 90%">
+		<div style="width: 100%">
 			<style>
 				@media print {
 					table {
