@@ -69,7 +69,7 @@
 									icon: 'success'
 								});
 								setTimeout(function() {
-									location.reload();
+                                    window.location.replace('<?php echo base_url('pejabat'); ?>');
 								}, 1500);
 							},
 							error: function(jqXHR, textStatus, errorThrown) {

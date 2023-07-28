@@ -6,7 +6,7 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add Ijazah</h4>
+                    <h4 class="card-title">New Ijazah</h4>
                     <form class="form-sample" action="<?php echo base_url('ijazah/store'); ?>" method="post">
                         <div class="form-group">
                             <label for="taruna">Taruna</label>
