@@ -38,10 +38,10 @@
 
   <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 4rem; margin-left: 4rem;">
     <div>
-      <p style="text-align: center;"><strong>No Seri : <?= $ijazah->Nomor_Seri; ?></strong></p>
+      <p style="text-align: center;"><strong>No. Seri : <?= $ijazah->Nomor_Seri; ?></strong></p>
     </div>
     <div>
-      <p style="text-align: center;"><strong>No Ijazah : <?= $ijazah->Nomor_Ijazah; ?></strong></p>
+      <p style="text-align: center;"><strong>No. Ijazah : <?= $ijazah->Nomor_Ijazah; ?></strong></p>
     </div>
   </div>
 
