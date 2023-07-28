@@ -38,7 +38,10 @@
                         </div>
                         <div class="form-group">
                             <label for="gelar_akademik">Gelar Akademik</label>
-                            <input type="text" id="gelar_akademik" name="gelar_akademik" class="form-control" value="<?php echo $ijazah->Gelar_Akademik; ?>">
+                            <select id="gelar_akademik" name="gelar_akademik" class="form-control">
+                                <option value="">Pilih Gelar</option>
+                                <option value="A.Md">Ahli Madya Komputer</option>
+                            </select>
                             <?php echo form_error('gelar_akademik'); ?>
                         </div>
                         <div class="form-group">

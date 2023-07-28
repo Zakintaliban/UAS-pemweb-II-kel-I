@@ -38,23 +38,17 @@
 
   <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 4rem; margin-left: 4rem;">
     <div>
-      <center>
-        <p><strong>No Seri : <?= $ijazah->Nomor_Seri; ?></strong></p>
-      </center>
+      <p style="text-align: center;"><strong>No Seri : <?= $ijazah->Nomor_Seri; ?></strong></p>
     </div>
     <div>
-      <center>
-        <p><strong>No Ijazah : <?= $ijazah->Nomor_Ijazah; ?></strong></p>
-      </center>
+      <p style="text-align: center;"><strong>No Ijazah : <?= $ijazah->Nomor_Ijazah; ?></strong></p>
     </div>
   </div>
 
   <br>
   <br>
 
-  <center>
-    <h1>IJAZAH</h1>
-  </center>
+  <h1 style="text-align: center;">IJAZAH</h1>
 
   <br>
 
@@ -74,7 +68,7 @@
       <p>: <?= $program_studi->Program_Pendidikan; ?></p>
       <p>: <?= $program_studi->Nama; ?></p>
       <p>: TERAKREDITASI "<strong><?= $program_studi->Akreditasi; ?></strong>"</p>
-      <p>
+      <p style="margin-left: 0.5rem">
         <i>Berdasarkan Keputusan BAN PT No.321</i>
       </p>
     </div>
@@ -88,23 +82,21 @@
 
   <br>
 
+
+  <p style="text-align: right; margin-right: 18rem; margin-bottom: -0.5rem; font-family: 'Bookman Old Style', sans-serif; font-size: 11pt;">Jakarta, <?= $ijazah->Tanggal_Pengesahan ?></p>
+
   <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 18rem; margin-left: 18rem;">
-    <div>
-      <center>
-        <h2>WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></h2>
-        <p style="margin-bottom: 10rem;">Politeknik Merdeka</p>
-        <h2><?= $wakil_direktur->Nama ?></h2>
-        <h2><?= $wakil_direktur->NIP ?></h2>
-      </center>
+    <div style="text-align: center;">
+      <p>WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></p>
+      <p style="margin-bottom: 8rem;">POLITEKNIK MERDEKA</p>
+      <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $wakil_direktur->Nama ?></p>
+      <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $wakil_direktur->NIP ?></p>
     </div>
-    <div>
-      <center>
-        <p>Jakarta, <?= convert_date(date('Y-m-d'))?></p>
-        <h2>DIREKTUR</h2>
-        <p style="margin-bottom: 8rem;">Politeknik Merdeka</p>
-        <h2><?= $direktur->Nama ?></h2>
-        <h2><?= $direktur->NIP ?></h2>
-      </center>
+    <div style="text-align: center;">
+      <p>DIREKTUR</p>
+      <p style="margin-bottom: 8rem;">POLITEKNIK MERDEKA</p>
+      <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $direktur->Nama ?></p>
+      <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $direktur->NIP ?></p>
     </div>
   </div>
 
