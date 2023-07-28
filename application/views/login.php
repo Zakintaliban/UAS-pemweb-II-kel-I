@@ -29,11 +29,14 @@
 <body>
 	<div class="container-scroller">
 		<div class="container-fluid page-body-wrapper full-page-wrapper">
-			<div class="content-wrapper d-flex align-items-center auth px-0" style="background-color: #6b6bfc7c;">
+			<div class="content-wrapper d-flex align-items-center auth px-0" style="background-color: #F5F7FF;">
 				<div class="row w-100 mx-0">
 					<div class="col-lg-4 mx-auto">
 						<div class="auth-form-light text-left py-5 px-4 px-sm-5">
-						<a class="navbar-brand brand-logo mr-5 judul" href="<?php echo base_url(""); ?>"><img src="<?php echo base_url('skydash/images/politeknik-merdeka.png') ?>" class="mr-2" alt="logo">Politeknik Merdeka</a>
+							<center style="margin-bottom: 2rem;">
+								<b> <a style="color:black;" class="judul" href="<?php echo base_url(""); ?>"><img src="<?php echo base_url('skydash/images/politeknik-merdeka.png') ?>" style="height:4rem; width:auto;" class="mr-6" alt="logo">Politeknik Merdeka</a>
+								</b>
+							</center>
 							<h4>Halo!👋 Selamat Datang</h4>
 							<h6 class="font-weight-light">Silakan login untuk melanjutkan</h6>
 
