@@ -27,9 +27,9 @@
 							</div>
 						</div>
 					</div>
-					<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('program_studi/edit/' . $program_studi->ID); ?>">Edit</a>
+					<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('programstudi/edit/' . $program_studi->ID); ?>">Edit</a>
 					<a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $program_studi->ID; ?>)">Delete</a>
-					<a href="<?php echo base_url('program_studi'); ?>" class="btn btn-light">Cancel</a>
+					<a href="<?php echo base_url('programstudi'); ?>" class="btn btn-light">Cancel</a>
 				</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 				}).then((result) => {
 					if (result.isConfirmed) {
 						$.ajax({
-							url: "<?php echo base_url('program_studi/delete/'); ?>" + id,
+							url: "<?php echo base_url('programstudi/delete/'); ?>" + id,
 							type: "POST",
 							data: {},
 							success: function(response) {
@@ -69,7 +69,7 @@
 									icon: 'success'
 								});
 								setTimeout(function() {
-                                    window.location.replace('<?php echo base_url('program_studi'); ?>');
+                                    window.location.replace('<?php echo base_url('programstudi'); ?>');
 								}, 1500);
 							},
 							error: function(jqXHR, textStatus, errorThrown) {

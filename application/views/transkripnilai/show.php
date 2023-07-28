@@ -23,9 +23,10 @@
 							</div>
 						</div>
 					</div>
-					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/print/' . $transkrip_nilai->ID); ?>">Print</a>
+					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkripnilai/print/' . $transkrip_nilai->ID); ?>">Print</a>
+					<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('transkripnilai/update/' . $transkrip_nilai->ID); ?>">Edit</a>
 					<a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $transkrip_nilai->ID; ?>)">Delete</a>
-					<a href="<?php echo base_url('transkrip_nilai'); ?>" class="btn btn-light">Cancel</a>
+					<a href="<?php echo base_url('transkripnilai'); ?>" class="btn btn-light">Cancel</a>
 				</div>
 			</div>
 		</div>
@@ -55,7 +56,7 @@
 				}).then((result) => {
 					if (result.isConfirmed) {
 						$.ajax({
-							url: "<?php echo base_url('transkrip_nilai/delete/'); ?>" + id,
+							url: "<?php echo base_url('transkripnilai/delete/'); ?>" + id,
 							type: "POST",
 							data: {},
 							success: function(response) {
@@ -65,7 +66,7 @@
 									icon: 'success'
 								});
 								setTimeout(function() {
-                                    window.location.replace('<?php echo base_url('transkrip_nilai'); ?>');
+                                    window.location.replace('<?php echo base_url('transkripnilai'); ?>');
 								}, 1500);
 							},
 							error: function(jqXHR, textStatus, errorThrown) {

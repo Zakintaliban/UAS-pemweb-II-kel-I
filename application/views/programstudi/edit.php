@@ -7,7 +7,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">Edit Program Studi</h4>
-					<form class="form-sample" action="<?php echo base_url('program_studi/update/' . $program_studi->ID); ?>" method="post">
+					<form class="form-sample" action="<?php echo base_url('programstudi/update/' . $program_studi->ID); ?>" method="post">
 						<div class="form-group">
 							<label for="nama">Nama</label>
 							<input type="text" id="nama" name="nama" class="form-control" value="<?php echo $program_studi->Nama; ?>">
@@ -36,7 +36,7 @@
 							<?php echo form_error('sk_akreditasi'); ?>
 						</div>
 						<input type="submit" class="btn btn-primary mr-2" value="Update Program Studi">
-						<a href="<?php echo base_url('program_studi'); ?>" class="btn btn-light">Cancel</a>
+						<a href="<?php echo base_url('programstudi'); ?>" class="btn btn-light">Cancel</a>
 					</form>
 				</div>
 			</div>

@@ -7,7 +7,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">List of Transkrip Nilai</h4>
-					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/create'); ?>">Add New Transkrip Nilai</a>
+					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkripnilai/create'); ?>">Add New Transkrip Nilai</a>
 					<div class="table-responsive">
 					<table id="order-listing" class="table">
 							<thead>
@@ -42,10 +42,10 @@
 											<?php endforeach; ?>
 										</td>
 										<td>
-											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('transkrip_nilai/show/' . $tn->ID); ?>">Show</a>
-											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('transkrip_nilai/update/' . $tn->ID); ?>">Edit</a>
+											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('transkripnilai/show/' . $tn->ID); ?>">Show</a>
+											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('transkripnilai/update/' . $tn->ID); ?>">Edit</a>
 											<a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $tn->ID; ?>)">Delete</a>
-											<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkrip_nilai/print/' . $tn->ID); ?>">Print</a>
+											<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('transkripnilai/print/' . $tn->ID); ?>">Print</a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
@@ -58,7 +58,7 @@
 
 		<?php $this->load->view('footer'); ?>
 
-		
+
 		<!-- SweetAlert CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
 
@@ -82,7 +82,7 @@
 				}).then((result) => {
 					if (result.isConfirmed) {
 						$.ajax({
-							url: "<?php echo base_url('transkrip_nilai/delete/'); ?>" + id,
+							url: "<?php echo base_url('transkripnilai/delete/'); ?>" + id,
 							type: "POST",
 							data: {},
 							success: function(response) {

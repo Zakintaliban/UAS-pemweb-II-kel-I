@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Program_Studi extends CI_Controller {
+class ProgramStudi extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -15,16 +15,16 @@ class Program_Studi extends CI_Controller {
 
     public function index() {
         $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
-        $this->load->view('program_studi/index', $data);
+        $this->load->view('programstudi/index', $data);
     }
 
     public function show($id) {
         $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($id);
-        $this->load->view('program_studi/show', $data);
+        $this->load->view('programstudi/show', $data);
     }
 
     public function create() {
-        $this->load->view('program_studi/new');
+        $this->load->view('programstudi/new');
     }
 
     public function store() {
@@ -34,17 +34,17 @@ class Program_Studi extends CI_Controller {
         $this->form_validation->set_rules('sk_akreditasi', 'SK Akreditasi', 'required');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('program_studi/new');
+            $this->load->view('programstudi/new');
         } else {
             $data = $this->input->post();
             $this->ProgramStudiModel->insert_program_studi($data);
-            redirect('program_studi');
+            redirect('programstudi');
         }
     }
 
     public function edit($id) {
         $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($id);
-        $this->load->view('program_studi/edit', $data);
+        $this->load->view('programstudi/edit', $data);
     }
 
     public function update($id) {
@@ -55,11 +55,11 @@ class Program_Studi extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             $data['program_studi'] = $this->ProgramStudiModel->get_program_studi($id);
-            $this->load->view('program_studi/edit', $data);
+            $this->load->view('programstudi/edit', $data);
         } else {
             $data = $this->input->post();
             $this->ProgramStudiModel->update_program_studi($id, $data);
-            redirect('program_studi');
+            redirect('programstudi');
         }
     }
 

@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">List of Program Studi</h4>
-					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('program_studi/create'); ?>">Add New Program Studi</a>
+					<a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('programstudi/create'); ?>">Add New Program Studi</a>
 					<div class="table-responsive">
 					<table id="order-listing" class="table">
 							<thead>
@@ -30,8 +30,8 @@
 										<td><?php echo $program->Akreditasi; ?></td>
 										<td><?php echo $program->SK_Akreditasi; ?></td>
 										<td>
-											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('program_studi/show/' . $program->ID); ?>">Show</a>
-											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('program_studi/edit/' . $program->ID); ?>">Edit</a>
+											<a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('programstudi/show/' . $program->ID); ?>">Show</a>
+											<a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('programstudi/edit/' . $program->ID); ?>">Edit</a>
 											<a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $program->ID; ?>)">Delete</a>
 										</td>
 									</tr>
@@ -68,7 +68,7 @@
 				}).then((result) => {
 					if (result.isConfirmed) {
 						$.ajax({
-							url: "<?php echo base_url('program_studi/delete/'); ?>" + id,
+							url: "<?php echo base_url('programstudi/delete/'); ?>" + id,
 							type: "POST",
 							data: {},
 							success: function(response) {

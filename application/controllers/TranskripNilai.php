@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transkrip_Nilai extends CI_Controller {
+class TranskripNilai extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -53,12 +53,12 @@ class Transkrip_Nilai extends CI_Controller {
             $data['foto'] = '';
         }
 
-        $this->load->view('transkrip_nilai/print', $data);
+        $this->load->view('transkripnilai/print', $data);
     }
 
 	public function getMataKuliah($id) {
 		$data['matakuliah'] = $this->MataKuliahModel->get_matakuliah($id);
-		$this->load->view('transkrip_nilai/print', $data);
+		$this->load->view('transkripnilai/print', $data);
 	}
 
     public function index() {
@@ -66,7 +66,7 @@ class Transkrip_Nilai extends CI_Controller {
 		$data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
         $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
-        $this->load->view('transkrip_nilai/index', $data);
+        $this->load->view('transkripnilai/index', $data);
     }
 
     public function show($id) {
@@ -74,14 +74,14 @@ class Transkrip_Nilai extends CI_Controller {
 		$data['taruna'] = $this->TarunaModel->get_taruna($data['transkrip_nilai']->Taruna);
 		$data['ijazah'] = $this->IjazahModel->get_ijazah($data['transkrip_nilai']->Ijazah);
 		$data['program_studi'] = $this->ProgramStudiModel->get_program_studi($data['transkrip_nilai']->Program_Studi);
-        $this->load->view('transkrip_nilai/show', $data);
+        $this->load->view('transkripnilai/show', $data);
     }
 
     public function create() {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
         $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
-        $this->load->view('transkrip_nilai/new', $data);
+        $this->load->view('transkripnilai/new', $data);
     }
 
     public function store() {
@@ -93,11 +93,11 @@ class Transkrip_Nilai extends CI_Controller {
             $data['taruna'] = $this->TarunaModel->get_all_taruna();
             $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
             $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
-            $this->load->view('transkrip_nilai/new', $data);
+            $this->load->view('transkripnilai/new', $data);
         } else {
             $data = $this->input->post();
             $this->TranskripNilaiModel->insert_transkrip_nilai($data);
-            redirect('transkrip_nilai');
+            redirect('transkripnilai');
         }
     }
 
@@ -106,7 +106,7 @@ class Transkrip_Nilai extends CI_Controller {
         $data['taruna'] = $this->TarunaModel->get_all_taruna();
         $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
         $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
-        $this->load->view('transkrip_nilai/edit', $data);
+        $this->load->view('transkripnilai/edit', $data);
     }
 
     public function update($id) {
@@ -119,11 +119,11 @@ class Transkrip_Nilai extends CI_Controller {
             $data['taruna'] = $this->TarunaModel->get_all_taruna();
             $data['ijazah'] = $this->IjazahModel->get_all_ijazah();
             $data['program_studi'] = $this->ProgramStudiModel->get_all_program_studi();
-            $this->load->view('transkrip_nilai/edit', $data);
+            $this->load->view('transkripnilai/edit', $data);
         } else {
             $data = $this->input->post();
             $this->TranskripNilaiModel->update_transkrip_nilai($id, $data);
-            redirect('transkrip_nilai');
+            redirect('transkripnilai');
         }
     }
 
