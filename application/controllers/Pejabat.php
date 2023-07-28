@@ -5,6 +5,10 @@ class Pejabat extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('PejabatModel');
         $this->load->library('form_validation');
     }
@@ -28,7 +32,7 @@ class Pejabat extends CI_Controller {
         $this->form_validation->set_rules('nip', 'NIP', 'required');
         $this->form_validation->set_rules('golongan', 'Golongan', 'required');
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('pejabat/new');
         } else {
@@ -48,7 +52,7 @@ class Pejabat extends CI_Controller {
         $this->form_validation->set_rules('nip', 'NIP', 'required');
         $this->form_validation->set_rules('golongan', 'Golongan', 'required');
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['pejabat'] = $this->PejabatModel->get_pejabat($id);
             $this->load->view('pejabat/edit', $data);

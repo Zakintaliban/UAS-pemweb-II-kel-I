@@ -106,9 +106,9 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="politeknik BoLi.png" alt="logo">
+                <img src="politeknik-merdeka.png" alt="logo">
               </div>
-              <h4>Selamat Datang</h4>
+              <h4>Halo!👋 Selamat Datang</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3">
                 <div class="form-group">

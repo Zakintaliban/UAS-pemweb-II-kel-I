@@ -5,6 +5,10 @@ class Kota extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+		$this->load->model('AuthModel');
+		if(!$this->AuthModel->current_user()){
+			redirect('auth/login');
+		}
         $this->load->model('KotaModel');
         $this->load->library('form_validation');
     }
@@ -26,7 +30,7 @@ class Kota extends CI_Controller {
     public function store() {
         $this->form_validation->set_rules('kode_kota', 'Kode Kota', 'required');
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('kota/new');
         } else {
@@ -44,7 +48,7 @@ class Kota extends CI_Controller {
     public function update($id) {
         $this->form_validation->set_rules('kode_kota', 'Kode Kota', 'required');
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        
+
         if ($this->form_validation->run() == FALSE) {
             $data['kota'] = $this->KotaModel->get_kota($id);
             $this->load->view('kota/edit', $data);
