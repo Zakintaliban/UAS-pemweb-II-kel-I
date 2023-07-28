@@ -84,28 +84,22 @@
 
 
   <p id="originalDate" style="display: none;">Jakarta, <?= $ijazah->Tanggal_Pengesahan ?></p>
-  <p id="formattedDate" style="text-align: right; margin-right: 19rem; margin-bottom: -0.5rem; font-family: 'Bookman Old Style', sans-serif; font-size: 11pt;"></p>
 
   <div style="justify-content: space-between; justify-items: center; display: flex; margin-right: 18rem; margin-left: 18rem;">
     <div style="text-align: center;">
-      <p>WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></p>
+      <p style="margin-top: 2rem;">WAKIL DIREKTUR <?= $ijazah->Wakil_Direktur; ?></p>
       <p style="margin-bottom: 8rem;">POLITEKNIK MERDEKA</p>
       <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $wakil_direktur->Nama ?></p>
       <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $wakil_direktur->NIP ?></p>
     </div>
     <div style="text-align: center;">
+      <p id="formattedDate" style="line-height: 40%; font-family: 'Bookman Old Style', sans-serif; font-size: 11pt;"></p>
       <p>DIREKTUR</p>
       <p style="margin-bottom: 8rem;">POLITEKNIK MERDEKA</p>
       <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $direktur->Nama ?></p>
       <p style="font-family: 'Calibri', sans-serif; font-size: 11pt;"><?= $direktur->NIP ?></p>
     </div>
   </div>
-
-  <!-- <script>
-    window.onload = function() {
-      window.print();
-    };
-  </script> -->
 
   <script>
     function formatDate(inputDate) {
