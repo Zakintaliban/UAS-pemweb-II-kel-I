@@ -23,7 +23,7 @@ class Auth extends CI_Controller
         $password = $this->input->post('password');
 
         if ($this->AuthModel->login($username, $password)) {
-            redirect("home");
+            redirect();
         } else {
             $data['error_message'] = 'Login Gagal, pastikan username dan password benar!';
             $this->load->view('login', $data); // Pass the $data array to the view
