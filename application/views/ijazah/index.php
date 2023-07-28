@@ -1,6 +1,7 @@
 <?php $this->load->view('header'); ?>
 <?php $this->load->view('sidebar'); ?>
 <div class="main-panel">
+    <div id="printContent" style="display: none;"></div>
     <div class="content-wrapper">
         <div class="grid-margin stretch-card">
             <div class="card">
@@ -47,7 +48,8 @@
                                             <a class="btn btn-inverse-success btn-fw" href="<?php echo base_url('ijazah/show/' . $i->ID); ?>">Show</a>
                                             <a class="btn btn-inverse-warning btn-fw" href="<?php echo base_url('ijazah/edit/' . $i->ID); ?>">Edit</a>
                                             <a class="btn btn-inverse-danger btn-fw" href="#" onclick="deleteData(<?php echo $i->ID; ?>)">Delete</a>
-                                            <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('ijazah/print/' . $i->ID); ?>">Print</a>
+                                            <!-- <a class="btn btn-inverse-primary btn-fw" href="<?php echo base_url('ijazah/print/' . $i->ID); ?>">Print</a> -->
+                                            <button class="btn btn-inverse-primary btn-fw printButton" data-id="<?php echo $i->ID; ?>">Print</button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -67,6 +69,41 @@
 
         <!-- SweetAlert JS -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(".printButton").on("click", function(e) {
+                    e.preventDefault();
+                    var printId = $(this).data("id");
+
+                    var printUrl = "<?= base_url('ijazah/print/'); ?>" + printId;
+
+                    $.ajax({
+                        url: printUrl,
+                        method: "GET",
+                        dataType: "html",
+                        success: function(response) {
+                            $("#printContent").html(response);
+
+                            printDiv("printContent");
+                        },
+                        error: function() {
+                            console.error("Gagal memuat halaman cetak.");
+                        }
+                    });
+                });
+
+                function printDiv(divId) {
+                    var content = document.getElementById(divId).innerHTML;
+                    var myWindow = window.open("", "_blank");
+                    myWindow.document.write(content);
+                    myWindow.document.close();
+                    myWindow.focus();
+                    myWindow.print();
+                    myWindow.close();
+                }
+            });
+        </script>
 
         <script>
             function deleteData(id) {

@@ -6,7 +6,7 @@
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Edit Ijazah</h4>
+                    <h4 class="card-title">Add New Ijazah</h4>
                     <form class="form-sample" action="<?php echo base_url('ijazah/store'); ?>" method="post">
                         <div class="form-group">
                             <label for="taruna">Taruna</label>
@@ -38,7 +38,10 @@
                         </div>
                         <div class="form-group">
                             <label for="gelar_akademik">Gelar Akademik</label>
-                            <input type="text" id="gelar_akademik" name="gelar_akademik" class="form-control">
+                            <select id="gelar_akademik" name="gelar_akademik" class="form-control">
+                                    <option value="">Pilih Gelar</option>
+                                    <option value="A.Md">Ahli Madya Komputer</option>
+                            </select>
                             <?php echo form_error('gelar_akademik'); ?>
                         </div>
                         <div class="form-group">
