@@ -615,6 +615,9 @@
 <script>
 	window.onload = function() {
 		window.print();
+		onafterprint = function () {
+                window.location.href = "javascript:history.back()";
+        }
 	};
 </script>
 
