@@ -22077,41 +22077,44 @@ code {
 }
 
 .card.card-tale {
-  background: #F5B041;
-  color: #ffffff;
+	background: #f5b041;
+	color: #ffffff;
 }
 
 .card.card-tale:hover {
-  background: #AEB6BF;
+	background: #ffd043;
+	color: #000;
 }
 
 .card.card-dark-blue {
-  background: #D35400;
-  color: #ffffff;
+	background: #d35400;
+	color: #ffffff;
 }
 
 .card.card-dark-blue:hover {
-  background: #5D6D7E;
+	background: #ff6500;
+	color: #000;
 }
 
 .card.card-light-blue {
-  background: #73C6B6;
-  color: #ffffff;
+	background: #73c6b6;
+	color: #ffffff;
 }
 
 .card.card-light-blue:hover {
-  background: #8f8eed;
+	background: #94ffea;
+	color: #000;
 }
 
 .card.card-light-danger {
-  background: #EC7063;
-  color: #ffffff;
+	background: #ec7063;
+	color: #ffffff;
 }
 
 .card.card-light-danger:hover {
-  background: #f59095;
+	background: #f59095;
+	color: #000;
 }
-
 .card-inverse-primary {
   background: rgba(75, 73, 172, 0.2);
   border: 1px solid #45439e;
